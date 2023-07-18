@@ -1,0 +1,56 @@
+.mat-toolbar{
+    display: flex;
+    background-color: #1F70C1;
+    height: 4.5em;
+}
+
+.logo{
+    width: 13em;
+    height: 3em;
+    margin-left: -.6em;
+}
+
+.sideNav{
+    justify-content: center;
+    flex-direction: column;
+    background-color:white;
+    width: 20em;
+    height: 88vh;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+  .icon {
+    color: #818181;
+    width: 7em !important; 
+    height: 7em !important;
+    font-size: 3em !important;
+  }
+
+  .text{
+    color: #818181;
+    font-family: Roboto;
+    font-size: 1.8125rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  .listItem{
+    margin-top: 2em;
+    display:flex;
+    justify-content: center;
+
+    mat-icon{
+        margin-right: .5em;
+        width: 1.2em;
+        height: 1.2em;
+        font-size: 1.2em;
+    }
+  }
+
+  .mainContent{
+    display:flex;
+    justify-content: flex-start;
+  }
+
+ 
