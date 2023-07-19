@@ -9,11 +9,17 @@ import { FormsModule } from '@angular/forms'
 import {MatListModule} from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 import { StartMentorComponent } from './start-mentor/start-mentor.component';
+import { TeamsPageComponent } from './start-mentor/teams-page/teams-page.component';
+import { StudentsPageComponent } from './start-mentor/students-page/students-page.component';
+import { SessionsPageComponent } from './start-mentor/sessions-page/sessions-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    StartMentorComponent
+    StartMentorComponent,
+    TeamsPageComponent,
+    StudentsPageComponent,
+    SessionsPageComponent
   ],
   imports: [
     BrowserModule,
