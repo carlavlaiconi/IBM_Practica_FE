@@ -15,6 +15,7 @@ import { SessionsPageComponent } from './start-mentor/sessions-page/sessions-pag
 import {MatTableModule} from '@angular/material/table';
 import { TableComponent } from './sharedComponents/table/table.component';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import { SidenavComponent } from './sharedComponents/sidenav/sidenav.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     TeamsPageComponent,
     StudentsPageComponent,
     SessionsPageComponent,
-    TableComponent
+    TableComponent,
+    SidenavComponent
     
   ],
   imports: [
