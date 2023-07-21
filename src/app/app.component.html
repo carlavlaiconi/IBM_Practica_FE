@@ -7,7 +7,7 @@
 <div class="listItem text" (click)="toTeams()" >
   <mat-icon >group</mat-icon> Teams
 </div>
-<div class="listItem text" (click)="toSessions()">
+<div class="listItem text" (click)="toSessions()" [class.my-text]="isHovered" (mouseenter)="isHovered = true" (mouseleave)="isHovered = false">
   <mat-icon>library_books</mat-icon> Sessions
 </div>
 <div class="listItem text" (click)="toStudents()">
@@ -16,29 +16,13 @@
 </div>
 
 
-<router-outlet></router-outlet>
+
 
 
 <div class="content">
-
+  <router-outlet></router-outlet>
 </div>
 </div>
 
 
 
-<!-- <div class="sidenav">
-  <div class="list">
-     <mat-list-item style="height: 10em; width: 10em;"> -->
-      <!-- <mat-icon class="icon">group</mat-icon>
-      <span class="text">Teams</span> -->
-    <!-- </mat-list-item> -->
-    <!-- <mat-list-item >
-      <mat-icon class="icon">library_books_FILL0_wght400_GRAD0_opsz48</mat-icon>
-      <span class="text">Sessions</span>
-    </mat-list-item>
-    <mat-list-item>
-      <mat-icon class="icon">remember_me_FILL0_wght400_GRAD0_opsz48</mat-icon>
-      <span class="text">Students</span>
-    </mat-list-item> 
-  </div>
-</div> -->

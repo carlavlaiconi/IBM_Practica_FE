@@ -12,6 +12,9 @@ import { StartMentorComponent } from './start-mentor/start-mentor.component';
 import { TeamsPageComponent } from './start-mentor/teams-page/teams-page.component';
 import { StudentsPageComponent } from './start-mentor/students-page/students-page.component';
 import { SessionsPageComponent } from './start-mentor/sessions-page/sessions-page.component';
+import {MatTableModule} from '@angular/material/table';
+import { TableComponent } from './sharedComponents/table/table.component';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,9 @@ import { SessionsPageComponent } from './start-mentor/sessions-page/sessions-pag
     StartMentorComponent,
     TeamsPageComponent,
     StudentsPageComponent,
-    SessionsPageComponent
+    SessionsPageComponent,
+    TableComponent
+    
   ],
   imports: [
     BrowserModule,
@@ -29,7 +34,9 @@ import { SessionsPageComponent } from './start-mentor/sessions-page/sessions-pag
     MatSidenavModule,
     FormsModule,
     MatListModule,
-    MatIconModule
+    MatIconModule,
+    MatTableModule, 
+    MatPaginatorModule
   ],
   providers: [],
   bootstrap: [AppComponent]

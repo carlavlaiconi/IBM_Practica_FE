@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 export class AppComponent {
   title = 'IBM';
   opened=false;
+isHovered: any;
 
   constructor(
     public router: Router

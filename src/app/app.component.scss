@@ -50,7 +50,22 @@
 
   .mainContent{
     display:flex;
-    justify-content: flex-start;
+ 
   }
 
+  .content{
+    display: flex;
+    justify-content: center; 
+    align-self: center;
+    align-items: center;
+    align-content: center;
+  }
+
+  .my-text {
+    color: black; 
+  }
+  
  
+  .my-text:hover {
+    color: #1F70C1; 
+  }
