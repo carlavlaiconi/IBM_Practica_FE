@@ -16,6 +16,14 @@ import {MatTableModule} from '@angular/material/table';
 import { TableComponent } from './sharedComponents/table/table.component';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { SidenavComponent } from './sharedComponents/sidenav/sidenav.component';
+import { StartLeaderComponent } from './start-leader/start-leader.component';
+import { RegisterPageComponent } from './start-leader/register-page/register-page.component';
+import { EnrollmentsPageComponent } from './start-leader/enrollments-page/enrollments-page.component';
+import { MembersPageComponent } from './start-leader/members-page/members-page.component';
+import { MyStatusLeaderComponent } from './start-leader/my-status-leader/my-status-leader.component';
+import { StartStudentComponent } from './start-student/start-student.component';
+import { MyStatusStudentComponent } from './start-student/my-status-student/my-status-student.component';
+import { MyTeamComponent } from './start-student/my-team/my-team.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +33,15 @@ import { SidenavComponent } from './sharedComponents/sidenav/sidenav.component';
     StudentsPageComponent,
     SessionsPageComponent,
     TableComponent,
-    SidenavComponent
+    SidenavComponent,
+    StartLeaderComponent,
+    RegisterPageComponent,
+    EnrollmentsPageComponent,
+    MembersPageComponent,
+    MyStatusLeaderComponent,
+    StartStudentComponent,
+    MyStatusStudentComponent,
+    MyTeamComponent
     
   ],
   imports: [

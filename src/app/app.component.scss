@@ -11,7 +11,7 @@
 }
 
 .sideNav{
-    justify-content: center;
+    justify-content: start;
     flex-direction: column;
     background-color:white;
     width: 20em;
@@ -29,7 +29,7 @@
   .text{
     color: #818181;
     font-family: Roboto;
-    font-size: 1.8125rem;
+    font-size: 1.4rem;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
@@ -38,7 +38,8 @@
   .listItem{
     margin-top: 2em;
     display:flex;
-    justify-content: center;
+    justify-content: start;
+    margin-left: 2.5em;
 
     mat-icon{
         margin-right: .5em;
@@ -62,10 +63,15 @@
   }
 
   .my-text {
-    color: black; 
+    color:#818181; 
   }
   
  
   .my-text:hover {
     color: #1F70C1; 
   }
+
+    .myButton{
+      background-color: transparent;
+      border: none;
+    }
