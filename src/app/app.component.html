@@ -4,15 +4,18 @@
 
 <div class="mainContent">
 <div class="sideNav">
-<div class="listItem text" (click)="toTeams()" >
-  <mat-icon >group</mat-icon> Teams
-</div>
-<div class="listItem text" (click)="toSessions()" [class.my-text]="isHovered" (mouseenter)="isHovered = true" (mouseleave)="isHovered = false">
-  <mat-icon>library_books</mat-icon> Sessions
-</div>
-<div class="listItem text" (click)="toStudents()">
-  <mat-icon>remember_me</mat-icon> Students
-</div>
+<button mat-button *ngIf="isMentor" class="listItem text myButton" (click)="toTeams()" [class.my-text]="isHovered" (mouseenter)="isHovered = true" (mouseleave)="isHovered = false">  <mat-icon>group</mat-icon>Teams</button>
+<button mat-button *ngIf="isMentor" class="listItem text myButton" (click)="toSessions()" [class.my-text]="isHovered" (mouseenter)="isHovered = true" (mouseleave)="isHovered = false">  <mat-icon>library_books</mat-icon>Sessions</button>
+<button mat-button *ngIf="isMentor" class="listItem text myButton" (click)="toStudents()" [class.my-text]="isHovered" (mouseenter)="isHovered = true" (mouseleave)="isHovered = false">  <mat-icon>remember_me_FILL0_wght400_GRAD0_opsz48</mat-icon>Students</button>
+<button mat-button *ngIf="isLeader" class="listItem text myButton" (click)="toRegister()" [class.my-text]="isHovered" (mouseenter)="isHovered = true" (mouseleave)="isHovered = false">  <mat-icon>app_registration</mat-icon>Register</button>
+<button mat-button *ngIf="isLeader" class="listItem text myButton" (click)="toMembers()" [class.my-text]="isHovered" (mouseenter)="isHovered = true" (mouseleave)="isHovered = false">  <mat-icon>group</mat-icon>Members</button>
+<button mat-button *ngIf="isLeader" class="listItem text myButton" (click)="toEnrollments()" [class.my-text]="isHovered" (mouseenter)="isHovered = true" (mouseleave)="isHovered = false">  <mat-icon>view_lists</mat-icon>Enrollments</button>
+<button mat-button *ngIf="isLeader" class="listItem text myButton" (click)="toMyStatusLeader()" [class.my-text]="isHovered" (mouseenter)="isHovered = true" (mouseleave)="isHovered = false">  <mat-icon>bar_chart_4_bars</mat-icon> My status</button>
+<button mat-button *ngIf="isStudent" class="listItem text myButton" (click)="toMyStatusStudent()" [class.my-text]="isHovered" (mouseenter)="isHovered = true" (mouseleave)="isHovered = false">  <mat-icon>bar_chart_4_bars</mat-icon> My status</button>
+<button mat-button *ngIf="isStudent" class="listItem text myButton" (click)="toMyTeam()" [class.my-text]="isHovered" (mouseenter)="isHovered = true" (mouseleave)="isHovered = false">  <mat-icon>group</mat-icon>My team</button>
+
+
+
 </div>
 
 

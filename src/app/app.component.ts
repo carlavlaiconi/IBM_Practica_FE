@@ -9,22 +9,49 @@ import { Router } from '@angular/router';
 export class AppComponent {
   title = 'IBM';
   opened=false;
-isHovered: any;
+  public isHovered: any;
+  public isStudent: boolean = true ;
+  public isMentor: boolean = true ;
+  public isLeader: boolean = true ;
 
   constructor(
     public router: Router
   ) { }
 
   toTeams(){
-    this.router.navigateByUrl('Mentor/Teams')
+    this.router.navigateByUrl('Teams')
   }
 
   toSessions(){
-    this.router.navigateByUrl('Mentor/Sessions')
+    this.router.navigateByUrl('Sessions')
   }
 
   toStudents(){
-    this.router.navigateByUrl('Mentor/Students')
+    this.router.navigateByUrl('Students')
+  }
+
+  toEnrollments(){
+    this.router.navigateByUrl('Enrollments')
+  }
+
+  toRegister(){
+    this.router.navigateByUrl('Register')
+  }
+
+  toMembers(){
+    this.router.navigateByUrl('Members')
+  }
+
+  toMyStatusLeader(){
+    this.router.navigateByUrl('MyStatus')
+  }
+
+  toMyStatusStudent(){
+    this.router.navigateByUrl('MyStatus')
+  }
+
+  toMyTeam(){
+    this.router.navigateByUrl('MyTeam')
   }
 
 }
