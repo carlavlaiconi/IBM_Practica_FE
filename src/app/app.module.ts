@@ -29,6 +29,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { SearchBarComponent } from './sharedComponents/search-bar/search-bar.component';
 import { SearchService } from './search.service';
+import { MatDialogModule } from '@angular/material/dialog';
+import { CommentModalComponent } from './sharedComponents/comment-modal/comment-modal.component';
 
 
 @NgModule({
@@ -48,7 +50,8 @@ import { SearchService } from './search.service';
     StartStudentComponent,
     MyStatusStudentComponent,
     MyTeamComponent,
-    SearchBarComponent
+    SearchBarComponent,
+    CommentModalComponent,
     
   ],
   imports: [
@@ -64,7 +67,8 @@ import { SearchService } from './search.service';
     MatPaginatorModule,
     MatButtonModule,
     MatInputModule,
-    MatSelectModule
+    MatSelectModule,
+    MatDialogModule,
   ],
   providers: [SearchService],
   bootstrap: [AppComponent]
