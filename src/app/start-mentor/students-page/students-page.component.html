@@ -4,7 +4,6 @@
         Activity
         <mat-icon>arrow_drop_down</mat-icon>
     </button> -->
-    
         <mat-select [(value)]="selected" class="myOptionActivity text">
           <mat-option value="option1">Activity 1</mat-option>
           <mat-option value="option2">Activity 2</mat-option>
@@ -27,8 +26,11 @@
        <mat-icon>search</mat-icon> 
     </mat-form-field>
     <mat-icon>search</mat-icon> -->
+<div class="searchBar">
+    <app-search-bar (filterChanged)="applyFilter($event)"></app-search-bar>
+</div>
 </div>
 
 <div class="table">
-    <app-table [displayedColumns]="columns" [dataSource]="students"></app-table>
+    <app-table [displayedColumns]="columns"></app-table>
 </div>

@@ -27,6 +27,8 @@ import { MyTeamComponent } from './start-student/my-team/my-team.component';
 import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
+import { SearchBarComponent } from './sharedComponents/search-bar/search-bar.component';
+import { SearchService } from './search.service';
 
 
 @NgModule({
@@ -45,7 +47,8 @@ import {MatSelectModule} from '@angular/material/select';
     MyStatusLeaderComponent,
     StartStudentComponent,
     MyStatusStudentComponent,
-    MyTeamComponent
+    MyTeamComponent,
+    SearchBarComponent
     
   ],
   imports: [
@@ -63,7 +66,7 @@ import {MatSelectModule} from '@angular/material/select';
     MatInputModule,
     MatSelectModule
   ],
-  providers: [],
+  providers: [SearchService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
