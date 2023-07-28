@@ -20,7 +20,7 @@ export class SessionsPageComponent {
   selected2 = 'option1'
 
 
-  columns: string[] = ['Id', 'Name', 'Grade', 'Comment'];
+  columns: string[] = ['Id', 'Name', 'Attendance', 'Grade', 'Comment'];
   students: any[] = [];
   filteredStudents: any[] = []
 
@@ -36,20 +36,20 @@ export class SessionsPageComponent {
     setTimeout(() => {
       // Sample data (replace this with your actual data)
       this.students = [
-        { Id: 1, Name: 'Jovvhn Doe', Grade: '9' , Comment: 'yes-comment'},
-        { Id: 2, Name: 'Jane Smith', Grade: '7', Comment: 'no-comment'},
-        { Id: 3, Name: 'Michael Johnson', Grade: '10', Comment: 'yes-comment' },
-        { Id: 4, Name: 'Emily Adams', Grade: '8', Comment: 'no-comment' },
-        { Id: 5, Name: 'William Brown', Grade: '6', Comment: 'no-comment' },
-        { Id: 6, Name: 'Olivia Davis', Grade: '5', Comment: 'yes-comment' },
-        { Id: 7, Name: 'James Wilson', Grade: '9', Comment: 'no-comment' },
-        { Id: 8, Name: 'John Doe', Grade: '9', Comment: 'no-comment' },
-        { Id: 9, Name: 'Jane Smith', Grade: '7', Comment: 'yes-comment' },
-        { Id: 10, Name: 'Michael Johnson', Grade: '10', Comment: 'no-comment' },
-        { Id: 11, Name: 'Emily Adams', Grade: '8', Comment: 'no-comment' },
-        { Id: 12, Name: 'William Brown', Grade: '6', Comment: 'no-comment' },
-        { Id: 13, Name: 'Olivia Davis', Grade: '10', Comment: 'yes-comment' },
-        { Id: 14, Name: 'James Wilson', Grade: '9', Comment: 'no-comment' }
+        { Id: 1, Name: 'Jovvhn Doe', Attendance: 'check', Grade: '9', Comment: 'yes-comment'},
+        { Id: 2, Name: 'Jane Smith', Attendance: 'check', Grade: '7', Comment: 'no-comment'},
+        { Id: 3, Name: 'Michael Johnson', Attendance: 'check', Grade: '10', Comment: 'yes-comment' },
+        { Id: 4, Name: 'Emily Adams', Attendance: 'x', Grade: '-', Comment: 'no-comment' },
+        { Id: 5, Name: 'William Brown', Attendance: 'check', Grade: '6', Comment: 'no-comment' },
+        { Id: 6, Name: 'Olivia Davis', Attendance: 'check', Grade: '5', Comment: 'yes-comment' },
+        { Id: 7, Name: 'James Wilson', Attendance: 'x', Grade: '-', Comment: 'no-comment' },
+        { Id: 8, Name: 'John Doe', Attendance: 'check', Grade: '9', Comment: 'no-comment' },
+        { Id: 9, Name: 'Jane Smith', Attendance: 'check', Grade: '7', Comment: 'yes-comment' },
+        { Id: 10, Name: 'Michael Johnson', Attendance: 'check', Grade: '10', Comment: 'no-comment' },
+        { Id: 11, Name: 'Emily Adams', Attendance: 'x', Grade: '-', Comment: 'no-comment' },
+        { Id: 12, Name: 'William Brown', Attendance: 'check', Grade: '6', Comment: 'no-comment' },
+        { Id: 13, Name: 'Olivia Davis', Attendance: 'check', Grade: '10', Comment: 'yes-comment' },
+        { Id: 14, Name: 'James Wilson', Attendance: 'check', Grade: '9', Comment: 'no-comment' }
         // Add more student objects as needed...
       ];
 
