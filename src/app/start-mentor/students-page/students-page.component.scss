@@ -20,41 +20,46 @@
     
 // }
 
-    .text{
-        color: white;
-        font-family: Roboto;
-        font-size: 1rem;
-        font-style: normal;
-        font-weight: 400;
-        padding: .5em;
-    }
+.text{
+  color: white;
+  font-family: Roboto;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  padding: .5em;
+}
 
- 
 
-      .allignTop{
-      margin-bottom: 1em;
-      display: flex;
-      }
 
-      .myOptionActivity{
-        background: #1F70C1;
-        width: 9em;
-        height: 1.7em;
-        margin-left: 11.5em;
-        border-radius: 7px;
-        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-      }
+.allignTop{
+  margin-bottom: 1em;
+  display: flex;
+}
 
-      .myOptionSession{
-        background: #1F70C1;
-        width: 9em;
-        height: 1.7em;
-        margin-left: 1em;
-        border-radius: 7px;
-        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-      }
+.myOptionActivity{
+  background: #78A1CA;
+  width: 9.5em;
+  height: 1.7em;
+  margin-left: 11.5em;
+  border-radius: 7px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
 
-      .searchBar{
-        margin-left: 31em;
-      }
+.myOptionOrdering{
+  background: #1F70C1;
+  width: 9.5em;
+  height: 1.7em;
+  margin-left: 1em;
+  border-radius: 7px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
 
+.searchBar{
+  margin-left: 29.5em;
+}
+
+mat-paginator{
+  background-color: transparent;
+  width: 38em;
+  margin-left: 59em;
+}
