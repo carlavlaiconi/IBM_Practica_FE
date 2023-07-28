@@ -24,6 +24,10 @@ import { MyStatusLeaderComponent } from './start-leader/my-status-leader/my-stat
 import { StartStudentComponent } from './start-student/start-student.component';
 import { MyStatusStudentComponent } from './start-student/my-status-student/my-status-student.component';
 import { MyTeamComponent } from './start-student/my-team/my-team.component';
+import {MatButtonModule} from '@angular/material/button';
+import {MatInputModule} from '@angular/material/input';
+import {MatSelectModule} from '@angular/material/select';
+
 
 @NgModule({
   declarations: [
@@ -54,7 +58,10 @@ import { MyTeamComponent } from './start-student/my-team/my-team.component';
     MatListModule,
     MatIconModule,
     MatTableModule, 
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatButtonModule,
+    MatInputModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

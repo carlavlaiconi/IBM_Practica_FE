@@ -1,1 +1,57 @@
-<p>teams-page works!</p>
+<!-- <div class="allignTop">
+    <button mat-raised-button class="button text">
+      
+        Activity
+        <mat-icon>arrow_drop_down</mat-icon>
+    </button>
+    <button mat-raised-button class="button2 text">
+        Session
+        <mat-icon>arrow_drop_down</mat-icon>
+    </button>
+    <mat-form-field class="example-form-field">
+        <input matInput type="text" [(ngModel)]="value">
+        <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+          <mat-icon>close</mat-icon>
+        </button>
+       <mat-icon>search</mat-icon>
+    </mat-form-field>
+</div>
+
+<div class="table">
+<app-table></app-table>
+</div> -->
+
+<div class="allignTop">
+    <!-- <button mat-raised-button class="button text">
+      
+        Activity
+        <mat-icon>arrow_drop_down</mat-icon>
+    </button> -->
+    
+        <mat-select [(value)]="selected" class="myOptionActivity text">
+          <mat-option value="option1">Activity 1</mat-option>
+          <mat-option value="option2">Activity 2</mat-option>
+          <mat-option value="option3">Activity 3</mat-option>
+        </mat-select>
+        <mat-select [(value)]="selected2" class="myOptionSession text">
+            <mat-option value="option1">Session 1</mat-option>
+            <mat-option value="option2">Session 2</mat-option>
+            <mat-option value="option3">Session 3</mat-option>
+          </mat-select>
+    <!-- <button mat-raised-button class="button2 text">
+        Session
+        <mat-icon>arrow_drop_down</mat-icon>
+    </button> -->
+    <!-- <mat-form-field class="searchBar">
+        <input matInput type="text" [(ngModel)]="value" >
+        <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+          <mat-icon>close</mat-icon>
+        </button>
+       <mat-icon>search</mat-icon> 
+    </mat-form-field>
+    <mat-icon>search</mat-icon> -->
+</div>
+
+<div class="table">
+    <app-table [displayedColumns]="columns" [dataSource]="students"></app-table>
+</div>

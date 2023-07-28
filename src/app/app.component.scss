@@ -27,7 +27,7 @@
   }
 
   .text{
-    color: #818181;
+    color: #818181 !important;
     font-family: Roboto;
     font-size: 1.4rem;
     font-style: normal;
@@ -68,10 +68,10 @@
   
  
   .my-text:hover {
-    color: #1F70C1; 
+    color: #1F70C1 !important; 
   }
 
     .myButton{
-      background-color: transparent;
+      background-color: transparent !important;
       border: none;
     }
