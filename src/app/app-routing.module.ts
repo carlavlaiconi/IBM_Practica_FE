@@ -48,7 +48,7 @@ const routes: Routes = [
       },
       {
         path: 'MyStatus',
-        component: MyStatusLeaderComponent
+        component: MyStatusStudentComponent
       },
       {
         path: 'Register',

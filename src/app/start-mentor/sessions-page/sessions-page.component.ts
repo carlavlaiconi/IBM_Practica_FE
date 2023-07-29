@@ -15,7 +15,7 @@ import { CommentModalComponent } from 'src/app/sharedComponents/comment-modal/co
   styleUrls: ['./sessions-page.component.scss'],
 })
 export class SessionsPageComponent {
-  public value:any;
+  public value: any;
   selected = 'option2';
   selected2 = 'option1'
 

@@ -13,7 +13,7 @@
   background: #78A1CA;
   width: 5.2em;
   height: 2.5em;
-  margin-left: 10.7em;
+  margin-left: 9.1em;
   border-radius: 7px;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   color: white;
@@ -22,4 +22,13 @@
 .commentText {
     height: 4em;
     text-align: center;
+}
+
+.text{
+  color: white;
+  font-family: Roboto;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  padding: .5em;
 }

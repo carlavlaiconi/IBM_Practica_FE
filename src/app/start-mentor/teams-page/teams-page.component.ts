@@ -15,8 +15,8 @@ export class TeamsPageComponent {
   selected2 = 'option1'
 
   columns: string[] = ['Id', 'Name', 'Grade'];
-  students: any[] = [];
-  filteredStudents: any[] = [];
+  teams: any[] = [];
+  filteredTeams: any[] = [];
 
   @ViewChild(TableComponent, { static: true }) tableComponent!: TableComponent;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -29,7 +29,7 @@ export class TeamsPageComponent {
     // For now, we'll use a setTimeout to simulate a delay in data retrieval.   
     setTimeout(() => {
       // Sample data (replace this with your actual data)
-      this.students = [
+      this.teams = [
         { Id: 1, Name: 'Team 1', Grade: '9' },
         { Id: 2, Name: 'Team 2', Grade: '7' },
         { Id: 3, Name: 'Team 3', Grade: '10' },
@@ -47,10 +47,10 @@ export class TeamsPageComponent {
         // Add more student objects as needed...
       ];
 
-      this.filteredStudents = this.students.slice();
+      this.filteredTeams = this.teams.slice();
 
       // Create a new MatTableDataSource instance with the students data
-      const dataSource = new MatTableDataSource<any>(this.filteredStudents);
+      const dataSource = new MatTableDataSource<any>(this.filteredTeams);
       
       // Assign the MatTableDataSource instance to the TableComponent's dataSource property
       this.tableComponent.dataSource = dataSource;
@@ -64,7 +64,7 @@ export class TeamsPageComponent {
   applyFilter(filterValue: string) {
     const lowerCaseFilter = filterValue.trim().toLowerCase();
 
-    this.filteredStudents = this.students.filter((dataItem: any) => {
+    this.filteredTeams = this.teams.filter((dataItem: any) => {
       return (  
       dataItem.Name.toLowerCase().includes(lowerCaseFilter) ||
       dataItem.Grade.toString().includes(lowerCaseFilter)
@@ -72,6 +72,6 @@ export class TeamsPageComponent {
     });
 
     // Update the table with the filtered data
-    this.tableComponent.dataSource.data = this.filteredStudents;
+    this.tableComponent.dataSource.data = this.filteredTeams;
   }
 }  
