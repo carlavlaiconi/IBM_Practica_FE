@@ -15,7 +15,7 @@ import { CommentModalComponent } from 'src/app/sharedComponents/comment-modal/co
   styleUrls: ['./sessions-page.component.scss'],
 })
 export class SessionsPageComponent {
-  public value:any;
+  public value: any;
   selected = 'option2';
   selected2 = 'option1'
 
@@ -24,7 +24,7 @@ export class SessionsPageComponent {
   students: any[] = [];
   filteredStudents: any[] = []
 
-  @ViewChild(TableComponent) tableComponent!: TableComponent;
+  @ViewChild(TableComponent, { static: true }) tableComponent!: TableComponent;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
   constructor(private searchService: SearchService, private dialog: MatDialog) {}

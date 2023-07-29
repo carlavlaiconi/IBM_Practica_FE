@@ -1,0 +1,31 @@
+:host {
+    .table{
+        display: flex;
+        justify-content: center;
+        align-self: center;
+        align-items: center;
+        align-content: center;
+        padding-left: 23em;
+        padding-top: 0;
+    }
+    
+    
+    .text{
+      color: white;
+      font-family: Roboto;
+      font-size: 1rem;
+      font-style: normal;
+      font-weight: 400;
+      padding: .5em;
+    }
+}
+  
+  /* Override styles for table component */
+  :host ::ng-deep app-table .box {
+    height: auto;
+    width: 40em;
+  }
+  
+
+
+  

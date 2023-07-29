@@ -36,7 +36,8 @@ const routes: Routes = [
       },
   {
     path: 'Leader',
-    component: StartLeaderComponent},
+    component: StartLeaderComponent
+  },
       {
         path: 'Enrollments',
         component: EnrollmentsPageComponent
@@ -55,7 +56,8 @@ const routes: Routes = [
       },
   {
     path: 'Student',
-    component: StartStudentComponent},
+    component: StartStudentComponent
+  },
       {
         path: 'MyStatus',
         component: MyStatusStudentComponent
