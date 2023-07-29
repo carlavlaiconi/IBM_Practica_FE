@@ -18,7 +18,7 @@ export class StudentsPageComponent {
   students: any[] = [];
   filteredStudents: any[] = [];
 
-  @ViewChild(TableComponent) tableComponent!: TableComponent;
+  @ViewChild(TableComponent, { static: true }) tableComponent!: TableComponent;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
   constructor(private searchService: SearchService) {}
