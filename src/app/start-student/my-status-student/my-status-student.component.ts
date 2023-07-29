@@ -63,8 +63,10 @@ export class MyStatusStudentComponent {
     const lowerCaseFilter = filterValue.trim().toLowerCase();
 
     this.filteredSessions = this.sessions.filter((dataItem: any) => {
+      const sessionValue = dataItem.Session.toString().toLowerCase();
+      
       return (  
-      dataItem.Name.toLowerCase().includes(lowerCaseFilter) ||
+      sessionValue.includes(lowerCaseFilter) ||
       dataItem.Grade.toString().includes(lowerCaseFilter)
       );
     });
