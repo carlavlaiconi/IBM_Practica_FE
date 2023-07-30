@@ -47,7 +47,7 @@ const routes: Routes = [
         component: MembersPageComponent
       },
       {
-        path: 'MyStatus',
+        path: 'MyStatusLeader',
         component: MyStatusLeaderComponent
       },
       {
@@ -59,7 +59,7 @@ const routes: Routes = [
     component: StartStudentComponent
   },
       {
-        path: 'MyStatus',
+        path: 'MyStatusStudent',
         component: MyStatusStudentComponent
       },
       {

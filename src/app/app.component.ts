@@ -43,11 +43,11 @@ export class AppComponent {
   }
 
   toMyStatusLeader(){
-    this.router.navigateByUrl('MyStatus')
+    this.router.navigateByUrl('MyStatusLeader')
   }
 
   toMyStatusStudent(){
-    this.router.navigateByUrl('MyStatus')
+    this.router.navigateByUrl('MyStatusStudent')
   }
 
   toMyTeam(){
