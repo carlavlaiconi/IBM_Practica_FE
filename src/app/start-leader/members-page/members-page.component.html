@@ -1,1 +1,33 @@
-<p>members-page works!</p>
+<div class="allignTop">
+    <mat-select [(value)]="selected" class="myOptionActivity text">
+      <mat-option value="option1">Intership</mat-option>
+      <mat-option value="option2">Summer practice</mat-option>
+      <mat-option value="option3">Project</mat-option>
+    </mat-select>
+  
+    <div class="searchBar">
+      <app-search-bar (filterChanged)="applyFilter($event)"></app-search-bar>
+    </div>
+  </div>
+  
+  <div class="tableBox">
+    <div class="table">
+      <app-table [displayedColumns]="columns">
+
+        <ng-container matColumnDef="Delete">
+          <th mat-header-cell *matHeaderCellDef>Delete</th>
+          <td mat-cell *matCellDef="let student" (click)="onDeleteClick(student)">
+            <mat-icon>{{ student.Delete }}</mat-icon>
+          </td>
+        </ng-container>
+        
+        
+
+      </app-table>
+    </div>
+    <button mat-button class="button-with-icon">
+        <span>Add member</span>
+        <mat-icon>add_box</mat-icon>
+    </button>
+</div>
+  
