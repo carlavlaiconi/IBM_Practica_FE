@@ -39,4 +39,14 @@ export class TableComponent implements OnInit {
   applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
+  onDeleteRow(rowData: any) {
+    // Implement the row deletion logic here
+    // For example, if you are using MatTableDataSource, you can remove the row like this:
+    const index = this.dataSource.data.indexOf(rowData);
+    if (index > -1) {
+      this.dataSource.data.splice(index, 1);
+      this.dataSource._updateChangeSubscription();
+    }
+  }
+  
 }

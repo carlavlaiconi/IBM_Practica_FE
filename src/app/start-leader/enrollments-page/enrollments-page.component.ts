@@ -12,7 +12,7 @@ import { EnrollmentModalComponent } from 'src/app/sharedComponents/enrollment-mo
 export class EnrollmentsPageComponent {
   public value:any;
 
-  columns: string[] = [' ', 'Activity', 'Edit'];
+  columns: string[] = [' ', 'Activity', 'Delete'];
   enrollments: any[] = [];
 
   @ViewChild(TableComponent, { static: true }) tableComponent!: TableComponent;
@@ -26,9 +26,9 @@ export class EnrollmentsPageComponent {
     setTimeout(() => {
       // Sample data (replace this with your actual data)
       this.enrollments = [
-        { ' ':1, Activity: 'Internship', Edit: 'delete'},
-        { ' ':2, Activity: 'Summer Practice', Edit: 'delete'},
-        { ' ':3, Activity: 'Project', Edit: 'delete' },
+        { ' ':1, Activity: 'Internship', Delete: 'delete'},
+        { ' ':2, Activity: 'Summer Practice', Delete: 'delete'},
+        { ' ':3, Activity: 'Project', Delete: 'delete' },
       ];
 
       const dataSource = new MatTableDataSource<any>(this.enrollments);

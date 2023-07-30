@@ -42,11 +42,11 @@ export class MembersPageComponent {
     setTimeout(() => {
       // Sample data (replace this with your actual data)
       this.students = [
-        { Id: 1, Name: 'John Doe', Grade: '9', Delete: 'delete_forever'},
-        { Id: 2, Name: 'Jane Smith', Grade: '7', Delete: 'delete_forever'},
-        { Id: 3, Name: 'Michael Johnson', Grade: '10', Delete: 'delete_forever' },
-        { Id: 4, Name: 'Emily Adams', Grade: '10', Delete: 'delete_forever' },
-        { Id: 5, Name: 'William Brown', Grade: '6', Delete: 'delete_forever' },
+        { Id: 1, Name: 'John Doe', Grade: '9', Delete: 'delete'},
+        { Id: 2, Name: 'Jane Smith', Grade: '7', Delete: 'delete'},
+        { Id: 3, Name: 'Michael Johnson', Grade: '10', Delete: 'delete' },
+        { Id: 4, Name: 'Emily Adams', Grade: '10', Delete: 'delete' },
+        { Id: 5, Name: 'William Brown', Grade: '6', Delete: 'delete' },
       ];
 
       this.filteredStudents = this.students.slice();
