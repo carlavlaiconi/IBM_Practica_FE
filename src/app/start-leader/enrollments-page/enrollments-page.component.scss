@@ -1,0 +1,72 @@
+:host {
+    .table{
+        display: flex;
+        justify-content: center;
+        align-self: center;
+        align-items: center;
+        align-content: center;
+        padding-left: 23em;
+        padding-top: 0;
+    
+    }
+    
+    .text{
+      color: white;
+      font-family: Roboto;
+      font-size: 1rem;
+      font-style: normal;
+      font-weight: 400;
+      padding: .5em;
+    }
+    
+    
+    
+    .allignTop{
+      margin-bottom: 1em;
+      display: flex;
+    }
+    
+    
+    .searchBar{
+      margin-left: 29.5em;
+    }
+    
+    mat-paginator{
+      background-color: transparent;
+      width: 38em;
+      margin-left: 59em;
+    }
+
+    .button-with-icon {
+        display: flex;
+        align-items: center;
+        background: none;
+        padding: 0;
+        color: #6095C9;
+        margin-top: .5em;
+        margin-left: 52.5em;
+        font-family: Roboto;
+      font-size: 1rem;
+      font-style: normal;
+      font-weight: 400;
+      }
+      
+      .button-with-icon span {
+        margin: 0;
+      }
+      
+      .button-with-icon mat-icon {
+        margin: 0;
+        margin-top: 0.05em;
+        margin-right: 1em;
+      }
+      
+}   
+
+  /* Override styles for table component */
+  :host ::ng-deep app-table .box {
+    max-height: 15.1em;
+    overflow-y: auto;
+    width: 50em;
+  }
+  
