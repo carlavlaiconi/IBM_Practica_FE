@@ -31,6 +31,8 @@ import { SearchBarComponent } from './sharedComponents/search-bar/search-bar.com
 import { SearchService } from './search.service';
 import { MatDialogModule } from '@angular/material/dialog';
 import { CommentModalComponent } from './sharedComponents/comment-modal/comment-modal.component';
+import { EnrollmentModalComponent } from './sharedComponents/enrollment-modal/enrollment-modal.component';
+import { NewMemberModalComponent } from './sharedComponents/new-member-modal/new-member-modal.component';
 
 
 @NgModule({
@@ -52,6 +54,8 @@ import { CommentModalComponent } from './sharedComponents/comment-modal/comment-
     MyTeamComponent,
     SearchBarComponent,
     CommentModalComponent,
+    EnrollmentModalComponent,
+    NewMemberModalComponent,
     
   ],
   imports: [

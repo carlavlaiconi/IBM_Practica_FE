@@ -7,7 +7,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { SearchService } from 'src/app/search.service';
 import { MatDialog } from '@angular/material/dialog';
-import { CommentModalComponent } from 'src/app/sharedComponents/comment-modal/comment-modal.component';
+import { NewMemberModalComponent } from 'src/app/sharedComponents/new-member-modal/new-member-modal.component';
 
 @Component({
   selector: 'app-members-page',
@@ -77,9 +77,15 @@ export class MembersPageComponent {
     this.tableComponent.dataSource.data = this.filteredStudents;
   }
 
-  openCommentModal(rowData: any) {
-    this.dialog.open(CommentModalComponent, {
-      data: { comment: rowData.Comment },
+  openNewMemberModal(): void {
+    const dialogRef = this.dialog.open(NewMemberModalComponent, {
+      data: { key: 'value' },
     });
-  }
+  
+    // Optional: You can subscribe to the afterClosed() observable to handle actions after the modal is closed.
+    dialogRef.afterClosed().subscribe(result => {
+      // Handle the result if needed
+      console.log('Modal closed with result:', result);
+    });
+}
 }
