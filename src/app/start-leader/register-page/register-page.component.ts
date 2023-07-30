@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./register-page.component.scss']
 })
 export class RegisterPageComponent {
+  public value: any;
+  selected = 'option2';
 
 }

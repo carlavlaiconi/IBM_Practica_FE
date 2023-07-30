@@ -1,1 +1,21 @@
-<p>register-page works!</p>
+<div class="mainContent">
+    <div class="box">
+        <p class="Title">Register team</p>
+        <div class="formsRight">
+            <mat-form-field hideRequiredMarker="true" class="fieldAlignment">
+                <mat-label>Team name</mat-label>
+                <input type="text" matInput required>
+            </mat-form-field>
+            <mat-form-field hideRequiredMarker="true" >
+                <mat-label>Add member</mat-label>
+                <input type="text" matInput required>
+            </mat-form-field>
+            <mat-select [(value)]="selected" class="myOptionActivity text">
+                <mat-option value="option1">Team project</mat-option>
+                <mat-option value="option2">Summer practice</mat-option>
+                <mat-option value="option3">Internship</mat-option>
+            </mat-select>
+        </div>
+       
+    </div>
+</div>

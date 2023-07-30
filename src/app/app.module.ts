@@ -31,7 +31,7 @@ import { SearchBarComponent } from './sharedComponents/search-bar/search-bar.com
 import { SearchService } from './search.service';
 import { MatDialogModule } from '@angular/material/dialog';
 import { CommentModalComponent } from './sharedComponents/comment-modal/comment-modal.component';
-
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
@@ -69,6 +69,7 @@ import { CommentModalComponent } from './sharedComponents/comment-modal/comment-
     MatInputModule,
     MatSelectModule,
     MatDialogModule,
+    MatFormFieldModule,
   ],
   providers: [SearchService],
   bootstrap: [AppComponent]
