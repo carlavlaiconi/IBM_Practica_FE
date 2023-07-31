@@ -8,6 +8,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { SearchService } from 'src/app/search.service';
 import { MatDialog } from '@angular/material/dialog';
 import { CommentModalComponent } from 'src/app/sharedComponents/comment-modal/comment-modal.component';
+import { NewSessionComponent } from 'src/app/sharedComponents/new-session/new-session.component';
 
 @Component({
   selector: 'app-sessions-page',
@@ -86,4 +87,15 @@ export class SessionsPageComponent {
       data: { comment: rowData.Comment },
     });
   }
+  openNewSession(): void {
+    const dialogRef = this.dialog.open(NewSessionComponent, {
+      data: { key: 'value' },
+    });
+  
+    // Optional: You can subscribe to the afterClosed() observable to handle actions after the modal is closed.
+    dialogRef.afterClosed().subscribe(result => {
+      // Handle the result if needed
+      console.log('Modal closed with result:', result);
+    });
+}
 }

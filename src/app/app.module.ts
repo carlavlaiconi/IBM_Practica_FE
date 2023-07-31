@@ -33,6 +33,8 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { CommentModalComponent } from './sharedComponents/comment-modal/comment-modal.component';
 import { EnrollmentModalComponent } from './sharedComponents/enrollment-modal/enrollment-modal.component';
 import { NewMemberModalComponent } from './sharedComponents/new-member-modal/new-member-modal.component';
+import { NewSessionComponent } from './sharedComponents/new-session/new-session.component';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 
 @NgModule({
@@ -56,6 +58,7 @@ import { NewMemberModalComponent } from './sharedComponents/new-member-modal/new
     CommentModalComponent,
     EnrollmentModalComponent,
     NewMemberModalComponent,
+    NewSessionComponent,
     
   ],
   imports: [
@@ -73,6 +76,7 @@ import { NewMemberModalComponent } from './sharedComponents/new-member-modal/new
     MatInputModule,
     MatSelectModule,
     MatDialogModule,
+    MatCheckboxModule,
   ],
   providers: [SearchService],
   bootstrap: [AppComponent]

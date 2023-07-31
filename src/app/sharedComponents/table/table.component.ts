@@ -3,6 +3,8 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatDialog } from '@angular/material/dialog';
 import { CommentModalComponent } from '../comment-modal/comment-modal.component';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+
 
 @Directive({ selector: 'app-table-header' })
 export class TableHeaderDirective {
@@ -24,10 +26,15 @@ export class TableComponent implements OnInit {
   @Input() dataSource: MatTableDataSource<any> = new MatTableDataSource<any>();
   @ViewChild(MatPaginator) paginator: MatPaginator | undefined;
 
+  inputValue: string = '';
+
   constructor(private dialog: MatDialog) {}
   
   ngOnInit() {
     this.dataSource.paginator = this.paginator || null;
+    this.dataSource.data.forEach(row => {
+      row.inputValueMark = null;
+    });
   }
 
   openCommentModal(rowData: any) {
