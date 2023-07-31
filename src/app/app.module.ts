@@ -31,7 +31,11 @@ import { SearchBarComponent } from './sharedComponents/search-bar/search-bar.com
 import { SearchService } from './search.service';
 import { MatDialogModule } from '@angular/material/dialog';
 import { CommentModalComponent } from './sharedComponents/comment-modal/comment-modal.component';
-
+import { MatFormFieldModule } from '@angular/material/form-field';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MemberBubbleComponent } from './sharedComponents/member-bubble/member-bubble.component';
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -52,6 +56,7 @@ import { CommentModalComponent } from './sharedComponents/comment-modal/comment-
     MyTeamComponent,
     SearchBarComponent,
     CommentModalComponent,
+    MemberBubbleComponent,
     
   ],
   imports: [
@@ -69,6 +74,10 @@ import { CommentModalComponent } from './sharedComponents/comment-modal/comment-
     MatInputModule,
     MatSelectModule,
     MatDialogModule,
+    MatFormFieldModule,
+    MatAutocompleteModule,
+    ReactiveFormsModule,
+    MatCardModule
   ],
   providers: [SearchService],
   bootstrap: [AppComponent]
