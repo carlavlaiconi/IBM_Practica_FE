@@ -36,7 +36,11 @@ import { NewMemberModalComponent } from './sharedComponents/new-member-modal/new
 import { NewSessionComponent } from './sharedComponents/new-session/new-session.component';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { AddCommentComponent } from './sharedComponents/add-comment/add-comment.component';
-
+import { MatFormFieldModule } from '@angular/material/form-field';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MemberBubbleComponent } from './sharedComponents/member-bubble/member-bubble.component';
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -61,7 +65,7 @@ import { AddCommentComponent } from './sharedComponents/add-comment/add-comment.
     NewMemberModalComponent,
     NewSessionComponent,
     AddCommentComponent,
-    
+    MemberBubbleComponent,
   ],
   imports: [
     BrowserModule,
@@ -79,6 +83,10 @@ import { AddCommentComponent } from './sharedComponents/add-comment/add-comment.
     MatSelectModule,
     MatDialogModule,
     MatCheckboxModule,
+    MatFormFieldModule,
+    MatAutocompleteModule,
+    ReactiveFormsModule,
+    MatCardModule
   ],
   providers: [SearchService],
   bootstrap: [AppComponent]

@@ -10,8 +10,8 @@ export class AppComponent {
   title = 'IBM';
   opened=false;
   public isHovered: any;
-  public isStudent: boolean = true ;
-  public isMentor: boolean = true ;
+  public isStudent: boolean = false ;
+  public isMentor: boolean = false ;
   public isLeader: boolean = true ;
 
   constructor(
