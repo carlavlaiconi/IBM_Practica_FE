@@ -1,11 +1,12 @@
 <div class="mainContent">
     <div class="box">
-        <p class="Title">Register team</p>
         <div class="formsRight">
+            <p class="Title">Register team</p>
             <mat-form-field hideRequiredMarker="true" class="fieldAlignment">
                 <mat-label>Team name</mat-label>
                 <input type="text" matInput required>
             </mat-form-field>
+            <div class="addMemberSection">
             <form class="example-form">
                 <mat-form-field class="example-full-width">
                   <mat-label>Add member</mat-label>
@@ -21,14 +22,19 @@
                   </mat-autocomplete>
                 </mat-form-field>
               </form>
-              <button (click)="clearForm()">Clear Form</button>
+              <button mat-fab color="gray" class="buttonAdd">
+                <mat-icon>add</mat-icon>
+              </button>
+            </div>
             <mat-select [(value)]="selected" class="myOptionActivity text">
                 <mat-option value="option1">Team project</mat-option>
                 <mat-option value="option2">Summer practice</mat-option>
                 <mat-option value="option3">Internship</mat-option>
             </mat-select>
-            <mat-card >
-                <mat-card-content>Simple card</mat-card-content>
+        </div>
+        <div class="membersCards">
+            <mat-card *ngFor="let member of membersOfTeam">
+                <mat-card-content>member</mat-card-content>
             </mat-card>
         </div>
     </div>

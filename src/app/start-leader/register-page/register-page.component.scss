@@ -1,8 +1,10 @@
 .box{
-    justify-content: center;
-    align-self: center;
-    align-items: center;
-    align-content: center;
+    // justify-content: center;
+    // align-self: center;
+    // align-items: center;
+    // align-content: center;
+    // flex-direction: column-reverse;
+    display:flex;
     width: 70em;
     height: 30em;
     border-radius: 0.625rem;
@@ -29,7 +31,7 @@
     height: 3.6875rem;
     flex-direction: column;
     justify-content: center;
-    margin-left: 2em;
+    //margin-left: 2em;
     flex-shrink: 0;
     color: #505050;
     font-family: Roboto;
@@ -41,12 +43,18 @@
 
     
 .formsRight{
-    display: flex;
+    flex: 1;
     justify-content: start;
-    flex-direction: column;
+    margin-top: 2em;
     margin-left: 3em;
-    width: 15em;
+    width: 20;
 
+}
+
+.addMember{
+    border-radius: 10px;
+    color: gray;
+    border-color: gray;
 }
 
 
@@ -78,16 +86,17 @@
     background: white;
   }
 
-//   .fieldAlignment{
-//     background-color: white;
-//     background: white;
-//     color: white;
-//   }
 
-.bubble{
-    display: flex;
-    justify-content: center;
-    height: 1em;
-    width: 5em;
-    color: aqua;
+.membersCards{
+    flex: 1;
+    margin-top: 3em;
+    //width: 18em;
 }
+
+.addMemberSection{
+    display: flex;
+}
+.buttonAdd{
+    margin-left: 1em;
+}
+
