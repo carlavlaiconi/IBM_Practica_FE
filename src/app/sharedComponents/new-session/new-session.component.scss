@@ -1,0 +1,96 @@
+:host {
+    .newTitle {
+    height: 3em;
+    color: white;
+    text-align: center;
+    background-color: #1F70C1;    
+}
+
+.newSession {
+    width: 75em;
+}
+
+.cancelButton {
+  background: #78A1CA;
+  width: 5.2em;
+  height: 2.5em;
+  border-radius: 10px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  color: white;
+  text-align: center;
+}
+
+.content {
+    text-align: center;
+    height: 35em;
+}
+
+.buttons {
+margin-top: 7em;
+margin-bottom: 1em;
+margin-left: 29.7em;
+}
+
+.saveButton {
+    background: #1F70C1;
+    width: 5.2em;
+    height: 2.5em;
+    border-radius: 10px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    color: white;
+    text-align: center;
+  }
+
+.text{
+  color: white;
+  font-family: Roboto;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  text-align: center;
+}
+
+  .text2 {
+    color: #818181;
+    font-family: Roboto;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    text-align: center;
+    padding-bottom: .5em;
+    padding-left: .5em;
+    padding-right: .5em;
+    padding-top: .8em;
+  }
+
+  .searchBar{
+    margin-left: 49.85em;
+  }
+
+  .allignTop{
+    margin-bottom: 1em;
+    display: flex;
+    margin-top: 2em;
+  }
+
+  .table{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    align-items: center;
+    align-content: center;
+    padding-left: 8em;
+    padding-right: 8em;
+}
+
+mat-paginator{
+    background-color: transparent;
+    width: 38em;
+    margin-left: 41em;
+  }  
+
+}
+
+:host ::ng-deep app-table .box {
+    width: 55em;
+  }

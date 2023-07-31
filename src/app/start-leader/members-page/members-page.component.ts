@@ -7,7 +7,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { SearchService } from 'src/app/search.service';
 import { MatDialog } from '@angular/material/dialog';
-import { CommentModalComponent } from 'src/app/sharedComponents/comment-modal/comment-modal.component';
+import { NewMemberModalComponent } from 'src/app/sharedComponents/new-member-modal/new-member-modal.component';
 
 @Component({
   selector: 'app-members-page',
@@ -42,11 +42,11 @@ export class MembersPageComponent {
     setTimeout(() => {
       // Sample data (replace this with your actual data)
       this.students = [
-        { Id: 1, Name: 'John Doe', Grade: '9', Delete: 'delete_forever'},
-        { Id: 2, Name: 'Jane Smith', Grade: '7', Delete: 'delete_forever'},
-        { Id: 3, Name: 'Michael Johnson', Grade: '10', Delete: 'delete_forever' },
-        { Id: 4, Name: 'Emily Adams', Grade: '10', Delete: 'delete_forever' },
-        { Id: 5, Name: 'William Brown', Grade: '6', Delete: 'delete_forever' },
+        { Id: 1, Name: 'John Doe', Grade: '9', Delete: 'delete'},
+        { Id: 2, Name: 'Jane Smith', Grade: '7', Delete: 'delete'},
+        { Id: 3, Name: 'Michael Johnson', Grade: '10', Delete: 'delete' },
+        { Id: 4, Name: 'Emily Adams', Grade: '10', Delete: 'delete' },
+        { Id: 5, Name: 'William Brown', Grade: '6', Delete: 'delete' },
       ];
 
       this.filteredStudents = this.students.slice();
@@ -77,9 +77,15 @@ export class MembersPageComponent {
     this.tableComponent.dataSource.data = this.filteredStudents;
   }
 
-  openCommentModal(rowData: any) {
-    this.dialog.open(CommentModalComponent, {
-      data: { comment: rowData.Comment },
+  openNewMemberModal(): void {
+    const dialogRef = this.dialog.open(NewMemberModalComponent, {
+      data: { key: 'value' },
     });
-  }
+  
+    // Optional: You can subscribe to the afterClosed() observable to handle actions after the modal is closed.
+    dialogRef.afterClosed().subscribe(result => {
+      // Handle the result if needed
+      console.log('Modal closed with result:', result);
+    });
+}
 }

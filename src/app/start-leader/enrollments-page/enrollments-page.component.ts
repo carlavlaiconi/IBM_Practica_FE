@@ -1,13 +1,8 @@
 import { Component, ViewChild } from '@angular/core';
 import { TableComponent } from 'src/app/sharedComponents/table/table.component';
-import { MatIconModule } from '@angular/material/icon';
-import { MatDividerModule } from '@angular/material/divider';
-import { MatButtonModule } from '@angular/material/button';
 import { MatTableDataSource } from '@angular/material/table';
-import { MatPaginator } from '@angular/material/paginator';
-import { SearchService } from 'src/app/search.service';
 import { MatDialog } from '@angular/material/dialog';
-import { CommentModalComponent } from 'src/app/sharedComponents/comment-modal/comment-modal.component';
+import { EnrollmentModalComponent } from 'src/app/sharedComponents/enrollment-modal/enrollment-modal.component';
 
 @Component({
   selector: 'app-enrollments-page',
@@ -17,11 +12,12 @@ import { CommentModalComponent } from 'src/app/sharedComponents/comment-modal/co
 export class EnrollmentsPageComponent {
   public value:any;
 
-
-  columns: string[] = [' ', 'Activity', 'Edit'];
+  columns: string[] = [' ', 'Activity', 'Delete'];
   enrollments: any[] = [];
 
   @ViewChild(TableComponent, { static: true }) tableComponent!: TableComponent;
+
+  constructor(private dialog: MatDialog) { }
 
   // Simulate an API call or data fetch to get students data (replace this with your actual data retrieval method)
   ngOnInit() {
@@ -30,9 +26,9 @@ export class EnrollmentsPageComponent {
     setTimeout(() => {
       // Sample data (replace this with your actual data)
       this.enrollments = [
-        { ' ':1, Activity: 'Internship', Edit: 'delete'},
-        { ' ':2, Activity: 'Summer Practice', Edit: 'delete'},
-        { ' ':3, Activity: 'Project', Edit: 'delete' },
+        { ' ':1, Activity: 'Internship', Delete: 'delete'},
+        { ' ':2, Activity: 'Summer Practice', Delete: 'delete'},
+        { ' ':3, Activity: 'Project', Delete: 'delete' },
       ];
 
       const dataSource = new MatTableDataSource<any>(this.enrollments);
@@ -40,4 +36,15 @@ export class EnrollmentsPageComponent {
       this.tableComponent.dataSource = dataSource;
     }, 0);
   }
+  openEnrollmentModal(): void {
+    const dialogRef = this.dialog.open(EnrollmentModalComponent, {
+      data: { key: 'value' },
+    });
+  
+    // Optional: You can subscribe to the afterClosed() observable to handle actions after the modal is closed.
+    dialogRef.afterClosed().subscribe(result => {
+      // Handle the result if needed
+      console.log('Modal closed with result:', result);
+    });
+}
 }

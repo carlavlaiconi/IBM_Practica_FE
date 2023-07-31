@@ -1,7 +1,7 @@
 <div class="table">
         <app-table [displayedColumns]="columns"></app-table>
 </div>
-<button mat-button class="button-with-icon">
+<button mat-button (click)="openEnrollmentModal()" class="button-with-icon">
     <span>Enroll to activity</span>
     <mat-icon>add_box</mat-icon>
 </button>
