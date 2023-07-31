@@ -35,6 +35,7 @@ import { EnrollmentModalComponent } from './sharedComponents/enrollment-modal/en
 import { NewMemberModalComponent } from './sharedComponents/new-member-modal/new-member-modal.component';
 import { NewSessionComponent } from './sharedComponents/new-session/new-session.component';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { AddCommentComponent } from './sharedComponents/add-comment/add-comment.component';
 
 
 @NgModule({
@@ -59,6 +60,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     EnrollmentModalComponent,
     NewMemberModalComponent,
     NewSessionComponent,
+    AddCommentComponent,
     
   ],
   imports: [

@@ -4,7 +4,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatDialog } from '@angular/material/dialog';
 import { CommentModalComponent } from '../comment-modal/comment-modal.component';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-
+import { AddCommentComponent } from '../add-comment/add-comment.component';
 
 @Directive({ selector: 'app-table-header' })
 export class TableHeaderDirective {
@@ -55,5 +55,9 @@ export class TableComponent implements OnInit {
       this.dataSource._updateChangeSubscription();
     }
   }
-  
+  openAddCommentModal(rowData: any) {
+    this.dialog.open(AddCommentComponent, {
+      data: { comment: rowData.Comment },
+    });
+  }
 }

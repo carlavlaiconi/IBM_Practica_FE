@@ -15,7 +15,7 @@ import { MatDialog } from '@angular/material/dialog';
 export class NewSessionComponent {
   public value: any;
 
-  columns: string[] = ['Id', 'Name', 'Present', 'Mark', 'Comment'];
+  columns: string[] = ['Id', 'Name', 'Present', 'Mark', 'Add comment'];
   students: any[] = [];
   filteredStudents: any[] = []
 
@@ -30,21 +30,20 @@ export class NewSessionComponent {
     setTimeout(() => {
       // Sample data (replace this with your actual data)
       this.students = [
-        { Id: 1, Name: 'Jovhn Doe', Comment: 'yes-comment'},
-        { Id: 2, Name: 'Jane Smith', Comment: 'no-comment'},
-        // { Id: 3, Name: 'Michael Johnson', Attendance: 'check', Grade: '10', Comment: 'yes-comment' },
-        // { Id: 4, Name: 'Emily Adams', Attendance: 'x', Grade: '-', Comment: 'no-comment' },
-        // { Id: 5, Name: 'William Brown', Attendance: 'check', Grade: '6', Comment: 'no-comment' },
-        // { Id: 6, Name: 'Olivia Davis', Attendance: 'check', Grade: '5', Comment: 'yes-comment' },
-        // { Id: 7, Name: 'James Wilson', Attendance: 'x', Grade: '-', Comment: 'no-comment' },
-        // { Id: 8, Name: 'John Doe', Attendance: 'check', Grade: '9', Comment: 'no-comment' },
-        // { Id: 9, Name: 'Jane Smith', Attendance: 'check', Grade: '7', Comment: 'yes-comment' },
-        // { Id: 10, Name: 'Michael Johnson', Attendance: 'check', Grade: '10', Comment: 'no-comment' },
-        // { Id: 11, Name: 'Emily Adams', Attendance: 'x', Grade: '-', Comment: 'no-comment' },
-        // { Id: 12, Name: 'William Brown', Attendance: 'check', Grade: '6', Comment: 'no-comment' },
-        // { Id: 13, Name: 'Olivia Davis', Attendance: 'check', Grade: '10', Comment: 'yes-comment' },
-        // { Id: 14, Name: 'James Wilson', Attendance: 'check', Grade: '9', Comment: 'no-comment' }
-        // Add more student objects as needed...
+        { Id: 1, Name: 'Jovhn Doe' },
+        { Id: 2, Name: 'Jane Smith' },
+        { Id: 3, Name: 'Michael Johnson' },
+        { Id: 4, Name: 'Emily Adams' },
+        { Id: 5, Name: 'William Brown' },
+        { Id: 6, Name: 'Olivia Davis' },
+        { Id: 7, Name: 'James Wilson' },
+        { Id: 8, Name: 'John Doe' },
+        { Id: 9, Name: 'Jane Smith' },
+        { Id: 10, Name: 'Michael Johnson' },
+        { Id: 11, Name: 'Emily Adams' },
+        { Id: 12, Name: 'William Brown' },
+        { Id: 13, Name: 'Olivia Davis' },
+        { Id: 14, Name: 'James Wilson' }
       ];
 
       this.filteredStudents = this.students.slice();
