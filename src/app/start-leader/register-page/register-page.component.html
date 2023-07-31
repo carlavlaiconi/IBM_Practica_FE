@@ -33,8 +33,8 @@
             </mat-select>
         </div>
         <div class="membersCards">
-            <mat-card *ngFor="let member of membersOfTeam">
-                <mat-card-content>member</mat-card-content>
+            <mat-card *ngFor="let member of membersOfTeam" class="memberCard">
+                <mat-card-content>{{member}}</mat-card-content>
             </mat-card>
         </div>
     </div>
