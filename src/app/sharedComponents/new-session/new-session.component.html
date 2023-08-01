@@ -1,0 +1,24 @@
+<div class="newSession">
+    <h2 mat-dialog-title class="newTitle">New Session</h2>
+        <div class="content">
+        <div class="allignTop">    
+            <div class="searchBar">
+                <app-search-bar (filterChanged)="applyFilter($event)"></app-search-bar>
+            </div>
+        </div>
+        
+        <div class="tableBox">
+        <div class="table">
+            <app-table [displayedColumns]="columns"></app-table>
+        </div>
+        <mat-paginator [pageSize]="7"
+                       [pageSizeOptions]="[7, 10, 20, 50]"
+                       aria-label="Select page">
+        </mat-paginator>
+        </div>
+    </div>
+    <mat-dialog-actions class="buttons">
+        <button mat-button [mat-dialog-close]="true" class="saveButton text">Save</button>
+        <button mat-button [mat-dialog-close]="true" class="cancelButton text">Cancel</button>
+    </mat-dialog-actions>
+</div>

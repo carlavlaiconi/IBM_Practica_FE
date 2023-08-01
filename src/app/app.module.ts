@@ -31,6 +31,11 @@ import { SearchBarComponent } from './sharedComponents/search-bar/search-bar.com
 import { SearchService } from './search.service';
 import { MatDialogModule } from '@angular/material/dialog';
 import { CommentModalComponent } from './sharedComponents/comment-modal/comment-modal.component';
+import { EnrollmentModalComponent } from './sharedComponents/enrollment-modal/enrollment-modal.component';
+import { NewMemberModalComponent } from './sharedComponents/new-member-modal/new-member-modal.component';
+import { NewSessionComponent } from './sharedComponents/new-session/new-session.component';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { AddCommentComponent } from './sharedComponents/add-comment/add-comment.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -57,10 +62,14 @@ import { GeneralButtonComponent } from './sharedComponents/general-button/genera
     MyTeamComponent,
     SearchBarComponent,
     CommentModalComponent,
+    EnrollmentModalComponent,
+    NewMemberModalComponent,
+    NewSessionComponent,
+    AddCommentComponent,
     MemberBubbleComponent,
     GeneralButtonComponent,
-    
   ],
+  
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -76,6 +85,7 @@ import { GeneralButtonComponent } from './sharedComponents/general-button/genera
     MatInputModule,
     MatSelectModule,
     MatDialogModule,
+    MatCheckboxModule,
     MatFormFieldModule,
     MatAutocompleteModule,
     ReactiveFormsModule,

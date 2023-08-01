@@ -1,0 +1,14 @@
+<div class="enrollModal">
+    <h2 mat-dialog-title class="enrollTitle">Enroll to new activity</h2>
+    <mat-dialog-content class="enrollText">
+        <mat-select [(value)]="selected" class="myOptionActivity text2">
+            <mat-option value="option1">Internship</mat-option>
+            <mat-option value="option2">Summer practice</mat-option>
+            <mat-option value="option3">Activity 3</mat-option>
+          </mat-select>
+    </mat-dialog-content>
+    <mat-dialog-actions>
+        <button mat-button [mat-dialog-close]="true" class="enrollButton text">Enroll</button>
+        <button mat-button [mat-dialog-close]="true" class="cancelButton text">Cancel</button>
+    </mat-dialog-actions>
+    </div>
