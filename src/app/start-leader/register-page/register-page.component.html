@@ -1,11 +1,13 @@
 <div class="mainContent">
     <div class="box">
-        <p class="Title">Register team</p>
+        <div class="separateButtons">
         <div class="formsRight">
+            <p class="Title">Register team</p>
             <mat-form-field hideRequiredMarker="true" class="fieldAlignment">
                 <mat-label>Team name</mat-label>
                 <input type="text" matInput required>
             </mat-form-field>
+            <div class="addMemberSection">
             <form class="example-form">
                 <mat-form-field class="example-full-width">
                   <mat-label>Add member</mat-label>
@@ -14,22 +16,41 @@
                          [formControl]="myControl"
                          [matAutocomplete]="auto"
                          [(ngModel)]="member">
-                  <mat-autocomplete #auto="matAutocomplete">
+                  <mat-autocomplete #auto="matAutocomplete" (optionSelected)="optionSelected = true">
                     <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
                       {{option}}
                     </mat-option>
                   </mat-autocomplete>
                 </mat-form-field>
               </form>
-              <button (click)="clearForm()">Clear Form</button>
+              <button mat-fab color="gray" class="buttonAdd" (click)="clearForm()" [disabled]="!optionSelected">
+                <mat-icon>add</mat-icon>
+              </button>
+            </div>
             <mat-select [(value)]="selected" class="myOptionActivity text">
                 <mat-option value="option1">Team project</mat-option>
                 <mat-option value="option2">Summer practice</mat-option>
                 <mat-option value="option3">Internship</mat-option>
             </mat-select>
-            <mat-card >
-                <mat-card-content>Simple card</mat-card-content>
-            </mat-card>
         </div>
+        <div class="membersCards">
+           
+            <mat-card *ngFor="let member of membersOfTeam" class="memberCard">
+                <mat-card-content class="card-content-wrapper">
+                    <p class="myText">{{member}}</p>
+                    <button class="removePersonButton" (click)="removeMember(member)">
+                      <mat-icon >delete</mat-icon>
+                    </button>
+                </mat-card-content>
+              </mat-card>
+
+        </div>
+        </div>
+        <div class="bottomButtons">
+            <button mat-raised-button class="buttonSave textButton">Save</button>
+         <button mat-raised-button class="buttonCancel textButton" (click)="cancelButton()">Cancel</button>
+        </div>
+        
     </div>
+
 </div>

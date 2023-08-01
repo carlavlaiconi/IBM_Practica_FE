@@ -42,6 +42,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MemberBubbleComponent } from './sharedComponents/member-bubble/member-bubble.component';
 import { MatCardModule } from '@angular/material/card';
 import { EditModalComponent } from './sharedComponents/edit-modal/edit-modal.component';
+import {MatCardModule} from '@angular/material/card';
+import { GeneralButtonComponent } from './sharedComponents/general-button/general-button.component';
 
 @NgModule({
   declarations: [
@@ -68,7 +70,9 @@ import { EditModalComponent } from './sharedComponents/edit-modal/edit-modal.com
     AddCommentComponent,
     MemberBubbleComponent,
     EditModalComponent,
+    GeneralButtonComponent,
   ],
+  
   imports: [
     BrowserModule,
     AppRoutingModule,
