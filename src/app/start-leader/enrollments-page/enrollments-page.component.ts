@@ -26,9 +26,9 @@ export class EnrollmentsPageComponent {
     setTimeout(() => {
       // Sample data (replace this with your actual data)
       this.enrollments = [
-        { ' ':1, Activity: 'Internship', Delete: 'delete'},
-        { ' ':2, Activity: 'Summer Practice', Delete: 'delete'},
-        { ' ':3, Activity: 'Project', Delete: 'delete' },
+        { ' ':1, Activity: 'Internship' },
+        { ' ':2, Activity: 'Summer Practice' },
+        { ' ':3, Activity: 'Project' },
       ];
 
       const dataSource = new MatTableDataSource<any>(this.enrollments);

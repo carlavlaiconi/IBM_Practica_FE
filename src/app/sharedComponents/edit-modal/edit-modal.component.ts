@@ -12,8 +12,13 @@ import { MatDialog } from '@angular/material/dialog';
 export class EditModalComponent {
   public value: any;
 
-  columns: string[] = ['Name', 'Present', 'Mark', 'Add comment', 'Average'];
+  columnDisplayNameMap: { [key: string]: string } = {
+    'Score': 'Grade'
+  };
+
+  columns: string[] = ['Name', 'Present', 'Score', 'Add comment', 'Average'];
   students: any[] = [];
+  initialScore: string = '';
 
   @ViewChild(TableComponent, { static: true }) tableComponent!: TableComponent;
 
@@ -25,8 +30,10 @@ export class EditModalComponent {
     setTimeout(() => {
       // Sample data (replace this with your actual data)
       this.students = [
-        { Name: 'Jovhn Doe', Present: true, Mark:'9', Average: '10'},
+        { Name: 'Jovhn Doe', Present: true, Score:'9', Average: '10'},
       ];
+
+      this.initialScore = this.students[0].Score;
 
       const dataSource = new MatTableDataSource<any>(this.students);
       

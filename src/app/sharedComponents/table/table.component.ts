@@ -23,6 +23,8 @@ export class TableRowDirective { }
 })
 
 export class TableComponent implements OnInit {
+  @Input() columnDisplayNameMap: { [key: string]: string } = {};
+  @Input() initialScore: string = '';
   @Input() displayedColumns: string[] = [];
   @Input() dataSource: MatTableDataSource<any> = new MatTableDataSource<any>();
   @ViewChild(MatPaginator) paginator: MatPaginator | undefined;
