@@ -97,6 +97,8 @@
 .memberCard{
     margin-top: .5em;
     width: 20em;
+    height: 4em;
+    display: flex;
 }
 
 .addMemberSection{
@@ -143,5 +145,18 @@
   .removePersonButton{
     background-color: transparent;
     border-color: transparent;
+    margin-right: 1em;
+
+  }
+
+  
+  .card-content-wrapper{
+    display: flex;
+    justify-content: space-between;
+    height: 4em;
+  }
+
+  .myText{
+    margin-top: .7em;
   }
 
