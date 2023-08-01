@@ -1,0 +1,74 @@
+:host {
+    .newTitle {
+    height: 3em;
+    color: white;
+    text-align: center;
+    background-color: #1F70C1;    
+}
+
+.edit {
+    width: 50em;
+}
+
+.cancelButton {
+  background: #78A1CA;
+  width: 5.2em;
+  height: 2.5em;
+  border-radius: 10px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  color: white;
+  text-align: center;
+}
+
+.content {
+    text-align: center;
+    margin-top: 3em;
+}
+
+.buttons {
+margin-top: 3em;
+margin-bottom: 1em;
+margin-left: 18.18em;
+}
+
+.saveButton {
+    background: #1F70C1;
+    width: 5.2em;
+    height: 2.5em;
+    border-radius: 10px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    color: white;
+    text-align: center;
+  }
+
+.text{
+  color: white;
+  font-family: Roboto;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  text-align: center;
+}
+
+  .table{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    align-items: center;
+    align-content: center;
+    padding-left: 8em;
+    padding-right: 8em;
+}
+.editTitle {
+    height: 3em;
+    color: white;
+    text-align: center;
+    background-color: #1F70C1;    
+}
+
+}
+
+:host ::ng-deep app-table .box {
+    width: 40em;
+    height: auto;
+  }

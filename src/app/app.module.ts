@@ -41,6 +41,7 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MemberBubbleComponent } from './sharedComponents/member-bubble/member-bubble.component';
 import {MatCardModule} from '@angular/material/card';
+import { EditModalComponent } from './sharedComponents/edit-modal/edit-modal.component';
 
 @NgModule({
   declarations: [
@@ -66,6 +67,7 @@ import {MatCardModule} from '@angular/material/card';
     NewSessionComponent,
     AddCommentComponent,
     MemberBubbleComponent,
+    EditModalComponent,
   ],
   imports: [
     BrowserModule,
