@@ -1,5 +1,6 @@
 <div class="mainContent">
     <div class="box">
+        <div class="separateButtons">
         <div class="formsRight">
             <p class="Title">Register team</p>
             <mat-form-field hideRequiredMarker="true" class="fieldAlignment">
@@ -15,14 +16,14 @@
                          [formControl]="myControl"
                          [matAutocomplete]="auto"
                          [(ngModel)]="member">
-                  <mat-autocomplete #auto="matAutocomplete">
+                  <mat-autocomplete #auto="matAutocomplete" (optionSelected)="optionSelected = true">
                     <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
                       {{option}}
                     </mat-option>
                   </mat-autocomplete>
                 </mat-form-field>
               </form>
-              <button mat-fab color="gray" class="buttonAdd">
+              <button mat-fab color="gray" class="buttonAdd" (click)="clearForm()" [disabled]="!optionSelected">
                 <mat-icon>add</mat-icon>
               </button>
             </div>
@@ -33,9 +34,23 @@
             </mat-select>
         </div>
         <div class="membersCards">
+           
             <mat-card *ngFor="let member of membersOfTeam" class="memberCard">
-                <mat-card-content>{{member}}</mat-card-content>
-            </mat-card>
+                <mat-card-content class="card-content-wrapper">
+                  {{member}}
+                    <button class="removePersonButton" (click)="removeMember(member)">
+                      <mat-icon>person_remove</mat-icon>
+                    </button>
+                </mat-card-content>
+              </mat-card>
+
         </div>
+        </div>
+        <div class="bottomButtons">
+            <button mat-raised-button class="buttonSave textButton">Save</button>
+         <button mat-raised-button class="buttonCancel textButton" (click)="cancelButton()">Cancel</button>
+        </div>
+        
     </div>
+
 </div>

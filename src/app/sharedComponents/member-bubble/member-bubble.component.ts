@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./member-bubble.component.scss']
 })
 export class MemberBubbleComponent {
-
+ public member: any;
 }

@@ -13,7 +13,10 @@ import {MatFormFieldModule} from '@angular/material/form-field';
   styleUrls: ['./register-page.component.scss'],
 })
 export class RegisterPageComponent implements OnInit {
-  public membersOfTeam: any[] = ['john.doe@example.com','jane.doe@example.com','bob.smith@example.com','alice.johnson@example.com','charlie.brown@example.com'];
+  //public membersOfTeam: any[] = ['john.doe@example.com','jane.doe@example.com','bob.smith@example.com','alice.johnson@example.com','charlie.brown@example.com'];
+  public membersOfTeam: any[] = [];
+  public optionSelected : boolean = false;
+
   public value: any;
   public member: any;
   selected = 'option2';
@@ -43,7 +46,24 @@ export class RegisterPageComponent implements OnInit {
 
   clearForm() { 
     this.membersOfTeam.push(this.member);
-    this.member = ""; }
+    this.member = "";
+    this.optionSelected=false;
+   }
+
+    cancelButton(){
+      this.membersOfTeam= [];
+    }
+
+    removeMember(memberToBeRemoved: string) {
+      const indexToRemove = this.membersOfTeam.indexOf(memberToBeRemoved);
+      if (indexToRemove !== -1) {
+        this.membersOfTeam.splice(indexToRemove, 1);
+      }
+    }
 }
+
+  
+
+
 
 

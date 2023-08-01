@@ -4,7 +4,7 @@
     // align-items: center;
     // align-content: center;
     // flex-direction: column-reverse;
-    display:flex;
+    //display:flex;
     width: 70em;
     height: 30em;
     border-radius: 0.625rem;
@@ -78,6 +78,7 @@
     padding-left: .5em;
     padding-right: .5em;
     padding-top: .6em;
+    
   }
 
   .myInput{
@@ -104,4 +105,43 @@
 .buttonAdd{
     margin-left: 1em;
 }
+
+.bottomButtons{
+    flex: 1;
+    margin-bottom: 1em;
+}
+
+.buttonSave{
+    background-color: #1F70C1;
+    margin-left: 20em;
+    
+  
+}
+
+.buttonCancel{
+    background-color: #1F70C1;
+    margin-left: 7em;
+}
+
+.textButton{
+    color: white;
+    font-family: Roboto;
+    font-size: 1.1rem;
+    font-style: normal;
+    font-weight: 400;
+    padding-bottom: .5em;
+    padding-left: .5em;
+    padding-right: .5em;
+    padding-top: .6em;
+    padding: 1em;
+  }
+
+  .separateButtons{
+    display: flex;
+  }
+
+  .removePersonButton{
+    background-color: transparent;
+    border-color: transparent;
+  }
 
