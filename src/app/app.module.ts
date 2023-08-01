@@ -37,9 +37,11 @@ import { NewSessionComponent } from './sharedComponents/new-session/new-session.
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { AddCommentComponent } from './sharedComponents/add-comment/add-comment.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MemberBubbleComponent } from './sharedComponents/member-bubble/member-bubble.component';
+import { MatCardModule } from '@angular/material/card';
+import { EditModalComponent } from './sharedComponents/edit-modal/edit-modal.component';
 import {MatCardModule} from '@angular/material/card';
 import { GeneralButtonComponent } from './sharedComponents/general-button/general-button.component';
 
@@ -67,6 +69,7 @@ import { GeneralButtonComponent } from './sharedComponents/general-button/genera
     NewSessionComponent,
     AddCommentComponent,
     MemberBubbleComponent,
+    EditModalComponent,
     GeneralButtonComponent,
   ],
   

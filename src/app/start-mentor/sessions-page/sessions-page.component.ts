@@ -21,7 +21,7 @@ export class SessionsPageComponent {
   selected2 = 'option1'
 
 
-  columns: string[] = ['Id', 'Name', 'Attendance', 'Grade', 'Comment'];
+  columns: string[] = ['Id', 'Name', 'Attendance', 'Grade', 'Comment', 'Edit'];
   students: any[] = [];
   filteredStudents: any[] = []
 

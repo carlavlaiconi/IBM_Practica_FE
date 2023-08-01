@@ -1,0 +1,12 @@
+<div class="edit">
+    <h2 mat-dialog-title class="editTitle">Edit</h2>
+        <div class="content">
+        <div class="table">
+            <app-table [displayedColumns]="columns" [initialScore]="initialScore"></app-table>
+        </div>
+    </div>
+    <mat-dialog-actions class="buttons">
+        <button mat-button [mat-dialog-close]="true" class="saveButton text">Save</button>
+        <button mat-button [mat-dialog-close]="true" class="cancelButton text">Cancel</button>
+    </mat-dialog-actions>
+</div>

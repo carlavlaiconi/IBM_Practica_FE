@@ -15,7 +15,7 @@ export class MyStatusStudentComponent {
   public value: any;
   selected = 'option2';
 
-  columns: string[] = ['Session', 'Attendance', 'Grade', 'Comment'];
+  columns: string[] = ['Session', 'Date', 'Attendance', 'Grade', 'Comment'];
   sessions: any[] = [];
   filteredSessions: any[] = []
 
@@ -31,18 +31,18 @@ export class MyStatusStudentComponent {
     setTimeout(() => {
       // Sample data (replace this with your actual data)
       this.sessions = [
-        { Session: 'Session 1', Attendance: 'check', Grade: '9', Comment: 'yes-comment'},
-        { Session: 'Session 2', Attendance: 'check', Grade: '7', Comment: 'no-comment'},
-        { Session: 'Session 3', Attendance: 'check', Grade: '10', Comment: 'yes-comment' },
-        { Session: 'Session 4', Attendance: 'x', Grade: '-', Comment: 'no-comment' },
-        { Session: 'Session 5', Attendance: 'check', Grade: '6', Comment: 'no-comment' },
-        { Session: 'Session 6', Attendance: 'check', Grade: '5', Comment: 'yes-comment' },
-        { Session: 'Session 7', Attendance: 'x', Grade: '-', Comment: 'no-comment' },
-        { Session: 'Session 8', Attendance: 'check', Grade: '9', Comment: 'no-comment' },
-        { Session: 'Session 9', Attendance: 'check', Grade: '7', Comment: 'yes-comment' },
-        { Session: 'Session 10', Attendance: 'check', Grade: '10', Comment: 'no-comment' },
-        { Session: 'Session 11', Attendance: 'x', Grade: '-', Comment: 'no-comment' },
-        { Session: 'Session 12', Attendance: 'check', Grade: '6', Comment: 'no-comment' },
+        { Session:'Session 1', Date: '05.05.2023', Attendance: 'check', Grade: '9', Comment: 'yes-comment'},
+        { Session:'Session 2', Date: '12.05.2023', Attendance: 'check', Grade: '7', Comment: 'no-comment'},
+        { Session:'Session 3', Date: '19.05.2023', Attendance: 'check', Grade: '10', Comment: 'yes-comment' },
+        { Session:'Session 4', Date: '26.05.2023', Attendance: 'x', Grade: '-', Comment: 'no-comment' },
+        { Session:'Session 5', Date: '02.06.2023', Attendance: 'check', Grade: '6', Comment: 'no-comment' },
+        { Session:'Session 6', Date: '09.06.2023', Attendance: 'check', Grade: '5', Comment: 'yes-comment' },
+        { Session:'Session 7', Date: '16.06.2023', Attendance: 'x', Grade: '-', Comment: 'no-comment' },
+        { Session:'Session 8', Date: '23.06.2023', Attendance: 'check', Grade: '9', Comment: 'no-comment' },
+        { Session:'Session 9', Date: '30.06.2023', Attendance: 'check', Grade: '7', Comment: 'yes-comment' },
+        { Session:'Session 10', Date: '07.07.2023', Attendance: 'check', Grade: '10', Comment: 'no-comment' },
+        { Session:'Session 11', Date: '14.07.2023', Attendance: 'x', Grade: '-', Comment: 'no-comment' },
+        { Session:'Session 12', Date: '21.07.2023', Attendance: 'check', Grade: '6', Comment: 'no-comment' },
       ];
 
       this.filteredSessions = this.sessions.slice();

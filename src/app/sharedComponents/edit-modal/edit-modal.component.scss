@@ -1,14 +1,13 @@
-.addCommentTitle {
+:host {
+    .newTitle {
     height: 3em;
     color: white;
     text-align: center;
     background-color: #1F70C1;    
 }
 
-.addComment {
-    width: 35em;
-    height: 19.4em;
-    justify-content: center;
+.edit {
+    width: 50em;
 }
 
 .cancelButton {
@@ -19,18 +18,23 @@
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   color: white;
   text-align: center;
-  margin-left: 1em;
 }
 
-.addCommentText {
+.content {
     text-align: center;
+    margin-top: 3em;
 }
 
-.addButton {
+.buttons {
+margin-top: 3em;
+margin-bottom: 1em;
+margin-left: 18.18em;
+}
+
+.saveButton {
     background: #1F70C1;
     width: 5.2em;
     height: 2.5em;
-    margin-left: 9.26em;
     border-radius: 10px;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     color: white;
@@ -46,22 +50,25 @@
   text-align: center;
 }
 
-.text2 {
-    color: #818181;
-    font-family: Roboto;
-    font-size: 1rem;
-    font-style: normal;
-    font-weight: 400;
+  .table{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    align-items: center;
+    align-content: center;
+    padding-left: 8em;
+    padding-right: 8em;
+}
+.editTitle {
+    height: 3em;
+    color: white;
     text-align: center;
-    padding-bottom: .5em;
-    padding-left: .5em;
-    padding-right: .5em;
-    padding-top: .8em;
-  }
-  
-  .example-full-width {
-    margin-left: 5.5em;
-    width: 20em;
-    margin-top: 1em;
-    margin-bottom: 1em;
+    background-color: #1F70C1;    
+}
+
+}
+
+:host ::ng-deep app-table .box {
+    width: 40em;
+    height: auto;
   }

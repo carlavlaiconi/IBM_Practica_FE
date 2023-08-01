@@ -1,10 +1,13 @@
 <div class="addComment">
     <h2 mat-dialog-title class="addCommentTitle">Add comment</h2>
-        <mat-form-field class="addCommentInput">
-            <textarea class="textField" [(ngModel)]="textareaValue" placeholder="Enter text here"></textarea>
-          </mat-form-field>
+    <mat-form-field class="example-full-width">
+        <mat-label>Enter text here</mat-label>
+        <textarea matInput placeholder="" [value]="textareaValue"></textarea>
+      </mat-form-field>
     <mat-dialog-actions>
+       <div class="buttons">
         <button mat-button [mat-dialog-close]="true" class="addButton text">Add</button>
         <button mat-button [mat-dialog-close]="true" class="cancelButton text">Cancel</button>
+    </div>
     </mat-dialog-actions>
     </div>

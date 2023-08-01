@@ -9,4 +9,9 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 export class AddCommentComponent {
   textareaValue: string = '';
   constructor(@Inject(MAT_DIALOG_DATA) public data: any) {}
+
+  ngOnInit() {
+    // Set the default text when the component initializes
+    //this.textareaValue = ''
+  }
 }

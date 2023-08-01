@@ -5,6 +5,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { CommentModalComponent } from '../comment-modal/comment-modal.component';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { AddCommentComponent } from '../add-comment/add-comment.component';
+import { EditModalComponent } from '../edit-modal/edit-modal.component';
 
 @Directive({ selector: 'app-table-header' })
 export class TableHeaderDirective {
@@ -22,6 +23,8 @@ export class TableRowDirective { }
 })
 
 export class TableComponent implements OnInit {
+  @Input() columnDisplayNameMap: { [key: string]: string } = {};
+  @Input() initialScore: string = '';
   @Input() displayedColumns: string[] = [];
   @Input() dataSource: MatTableDataSource<any> = new MatTableDataSource<any>();
   @ViewChild(MatPaginator) paginator: MatPaginator | undefined;
@@ -57,6 +60,11 @@ export class TableComponent implements OnInit {
   }
   openAddCommentModal(rowData: any) {
     this.dialog.open(AddCommentComponent, {
+      data: { comment: rowData.Comment },
+    });
+  }
+  openEditModal(rowData: any) {
+    this.dialog.open(EditModalComponent, {
       data: { comment: rowData.Comment },
     });
   }
