@@ -59,7 +59,7 @@
               <button mat-icon-button *ngIf="element[column] === 'yes-comment'" (click)="openCommentModal(element)">
                 <mat-icon>comment</mat-icon>
               </button>
-              <button mat-icon-button *ngIf="element[column] === 'no-comment'" disabled>
+              <button mat-icon-button *ngIf="element[column] === null" disabled>
                 <mat-icon>comment</mat-icon>
               </button>
             </ng-container>

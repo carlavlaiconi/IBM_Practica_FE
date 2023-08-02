@@ -3,6 +3,8 @@ import { TableComponent } from 'src/app/sharedComponents/table/table.component';
 import { MatTableDataSource } from '@angular/material/table';
 import { SearchService } from 'src/app/search.service';
 import { MatPaginator } from '@angular/material/paginator';
+import { Activity } from 'src/models/activityModel';
+import { ActivitiesService } from 'src/app/services/activities.service';
 
 @Component({
   selector: 'app-teams-page',
@@ -13,6 +15,10 @@ export class TeamsPageComponent {
   public value:any;
   selected = 'option2';
   selected2 = 'option1'
+  
+  public activityLoaded: boolean = false
+  public activities: Activity[] = []
+
 
   columns: string[] = ['Id', 'Name', 'Grade'];
   teams: any[] = [];
@@ -21,45 +27,49 @@ export class TeamsPageComponent {
   @ViewChild(TableComponent, { static: true }) tableComponent!: TableComponent;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
-  constructor(private searchService: SearchService) {}
+  constructor(private searchService: SearchService, private activityService: ActivitiesService) {}
 
   // Simulate an API call or data fetch to get students data (replace this with your actual data retrieval method)
-  ngOnInit() {
-    // Replace this with your actual data retrieval method, e.g., an API call, service, etc.
-    // For now, we'll use a setTimeout to simulate a delay in data retrieval.   
-    setTimeout(() => {
-      // Sample data (replace this with your actual data)
-      this.teams = [
-        { Id: 1, Name: 'Team 1', Grade: '9' },
-        { Id: 2, Name: 'Team 2', Grade: '7' },
-        { Id: 3, Name: 'Team 3', Grade: '10' },
-        { Id: 4, Name: 'Team 4', Grade: '8' },
-        { Id: 5, Name: 'Team 5', Grade: '6' },
-        { Id: 6, Name: 'Team 6', Grade: '10' },
-        { Id: 7, Name: 'Team 7', Grade: '9' },
-        { Id: 8, Name: 'Team 8', Grade: '9' },
-        { Id: 9, Name: 'Team 9', Grade: '7' },
-        { Id: 10, Name: 'Team 10', Grade: '10' },
-        { Id: 11, Name: 'Team 11', Grade: '8' },
-        { Id: 12, Name: 'Team 12', Grade: '6' },
-        { Id: 13, Name: 'Team 13', Grade: '10' },
-        { Id: 14, Name: 'Team 14', Grade: '9' }
-        // Add more student objects as needed...
-      ];
+  async ngOnInit() {
 
-      this.filteredTeams = this.teams.slice();
+    this.activityLoaded = false
+    await this.initActivity();
+    console.log(this.activities);
+    // // Replace this with your actual data retrieval method, e.g., an API call, service, etc.
+    // // For now, we'll use a setTimeout to simulate a delay in data retrieval.   
+    // //setTimeout(() => {
+    //   // Sample data (replace this with your actual data)
+    //   this.teams = [
+    //     { Id: 1, Name: 'Team 1', Grade: '9' },
+    //     { Id: 2, Name: 'Team 2', Grade: '7' },
+    //     { Id: 3, Name: 'Team 3', Grade: '10' },
+    //     { Id: 4, Name: 'Team 4', Grade: '8' },
+    //     { Id: 5, Name: 'Team 5', Grade: '6' },
+    //     { Id: 6, Name: 'Team 6', Grade: '10' },
+    //     { Id: 7, Name: 'Team 7', Grade: '9' },
+    //     { Id: 8, Name: 'Team 8', Grade: '9' },
+    //     { Id: 9, Name: 'Team 9', Grade: '7' },
+    //     { Id: 10, Name: 'Team 10', Grade: '10' },
+    //     { Id: 11, Name: 'Team 11', Grade: '8' },
+    //     { Id: 12, Name: 'Team 12', Grade: '6' },
+    //     { Id: 13, Name: 'Team 13', Grade: '10' },
+    //     { Id: 14, Name: 'Team 14', Grade: '9' }
+    //     // Add more student objects as needed...
+    //   ];
 
-      // Create a new MatTableDataSource instance with the students data
-      const dataSource = new MatTableDataSource<any>(this.filteredTeams);
+    //   this.filteredTeams = this.teams.slice();
+
+    //   // Create a new MatTableDataSource instance with the students data
+    //   const dataSource = new MatTableDataSource<any>(this.filteredTeams);
       
-      // Assign the MatTableDataSource instance to the TableComponent's dataSource property
-      this.tableComponent.dataSource = dataSource;
-      this.tableComponent.dataSource.paginator =  this.paginator;
-    }, 0); // Simulating a delay of 0 seconds for data retrieval
+    //   // Assign the MatTableDataSource instance to the TableComponent's dataSource property
+    //   this.tableComponent.dataSource = dataSource;
+    //   this.tableComponent.dataSource.paginator =  this.paginator;
+    // //}, 0); // Simulating a delay of 0 seconds for data retrieval
 
-    this.searchService.currentSearchInput$.subscribe((filterValue) => {
-      this.applyFilter(filterValue);
-    });
+    // this.searchService.currentSearchInput$.subscribe((filterValue) => {
+    //   this.applyFilter(filterValue);
+    // });
   }
   applyFilter(filterValue: string) {
     const lowerCaseFilter = filterValue.trim().toLowerCase();
@@ -74,4 +84,14 @@ export class TeamsPageComponent {
     // Update the table with the filtered data
     this.tableComponent.dataSource.data = this.filteredTeams;
   }
+
+  async initActivity() {
+    try {
+        this.activities = await this.activityService.getAllActivities().toPromise();
+        this.activityLoaded = true;
+    } catch (error) {
+        console.error(error);
+    }
+}
+
 }  

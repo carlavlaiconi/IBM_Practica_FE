@@ -1,6 +1,9 @@
 import { Component, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { TableComponent } from 'src/app/sharedComponents/table/table.component';
+import { UsersService } from 'src/app/services/users.service';
+import { User } from 'src/models/userModel';
+import { ChangeDetectorRef } from '@angular/core';
 
 @Component({
   selector: 'app-my-team',
@@ -10,26 +13,32 @@ import { TableComponent } from 'src/app/sharedComponents/table/table.component';
 export class MyTeamComponent {
   public value: any;
 
-  columns: string[] = ['Id', 'Name'];
-  students: any[] = [];
+  public studentLoaded: boolean = false
+  public students: User[] = []
+
+  columns: string[] = ['id', 'name'];
 
   @ViewChild(TableComponent, { static: true }) tableComponent!: TableComponent;
 
-  ngOnInit() {
-    // Replace this with your actual data retrieval method, e.g., an API call, service, etc.
-    // For now, we'll use a setTimeout to simulate a delay in data retrieval.   
-    setTimeout(() => {
-      // Sample data (replace this with your actual data)
-      this.students = [
-        { Id: 1, Name: 'John Doe', Grade: '9' },
-        { Id: 2, Name: 'Jane Smith', Grade: '7' },
-        { Id: 3, Name: 'Michael Johnson', Grade: '10' },
-        { Id: 4, Name: 'Emily Adams', Grade: '8' },
-        { Id: 5, Name: 'William Brown', Grade: '6' },
-      ];
+  constructor(private userService: UsersService, private changeDetectorRefs: ChangeDetectorRef) { }
 
-      const dataSource = new MatTableDataSource<any>(this.students);
-      this.tableComponent.dataSource = dataSource;
-    }, 0);
+  async ngOnInit() {
+    this.studentLoaded = false
+    await this.initStudents();
+    console.log(this.students)
+
+    const dataSource = new MatTableDataSource<any>(this.students);
+    this.tableComponent.dataSource = dataSource;
   }
+
+  async initStudents() {
+    try {
+      this.students = await this.userService.getAllUsers().toPromise() || [];
+      this.studentLoaded = true;
+      this.changeDetectorRefs.detectChanges();
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
 }

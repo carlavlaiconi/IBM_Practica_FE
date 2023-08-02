@@ -42,8 +42,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MemberBubbleComponent } from './sharedComponents/member-bubble/member-bubble.component';
 import { MatCardModule } from '@angular/material/card';
 import { EditModalComponent } from './sharedComponents/edit-modal/edit-modal.component';
-import {MatCardModule} from '@angular/material/card';
 import { GeneralButtonComponent } from './sharedComponents/general-button/general-button.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -92,7 +92,8 @@ import { GeneralButtonComponent } from './sharedComponents/general-button/genera
     MatFormFieldModule,
     MatAutocompleteModule,
     ReactiveFormsModule,
-    MatCardModule
+    MatCardModule,
+    HttpClientModule,
   ],
   providers: [SearchService],
   bootstrap: [AppComponent]
