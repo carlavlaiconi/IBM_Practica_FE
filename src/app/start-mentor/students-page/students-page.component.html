@@ -1,10 +1,10 @@
 <div class="allignTop">
-    
-        <mat-select [(value)]="selected" class="myOptionActivity text">
-          <mat-option value="option1">Activity 1</mat-option>
-          <mat-option value="option2">Summer practice</mat-option>
-          <mat-option value="option3">Activity 3</mat-option>
-        </mat-select>
+
+    <mat-select [(value)]="selected" class="myOptionActivity text">
+        <mat-option *ngFor="let activity of activities" [value]="activity.id">
+          {{ activity.name }}
+        </mat-option>
+      </mat-select>    
         <mat-select [(value)]="selected2" class="myOptionOrdering text">
             <mat-option value="option1">Unordered</mat-option>
             <mat-option value="option2">Ordered by grade</mat-option>

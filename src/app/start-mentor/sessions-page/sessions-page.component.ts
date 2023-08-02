@@ -38,7 +38,7 @@ export class SessionsPageComponent {
       // Sample data (replace this with your actual data)
       this.students = [
         { Id: 1, Name: 'Jovvhn Doe', Attendance: 'check', Grade: '9', Comment: 'yes-comment'},
-        { Id: 2, Name: 'Jane Smith', Attendance: 'check', Grade: '7', Comment: null},
+        { Id: 2, Name: 'Jane Smith', Attendance: 'check', Grade: '7', Comment: 'no-comment'},
         { Id: 3, Name: 'Michael Johnson', Attendance: 'check', Grade: '10', Comment: 'yes-comment' },
         { Id: 4, Name: 'Emily Adams', Attendance: 'x', Grade: '-', Comment: 'no-comment' },
         { Id: 5, Name: 'William Brown', Attendance: 'check', Grade: '6', Comment: 'no-comment' },

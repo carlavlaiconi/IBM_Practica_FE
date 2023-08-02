@@ -1,10 +1,13 @@
-import { Component, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Component, ViewChild } from '@angular/core';
 import { TableComponent } from 'src/app/sharedComponents/table/table.component';
 import { MatTableDataSource } from '@angular/material/table';
 import { SearchService } from 'src/app/search.service';
 import { MatPaginator } from '@angular/material/paginator';
 import { Activity } from 'src/models/activityModel';
 import { ActivitiesService } from 'src/app/services/activities.service';
+import { GradesService } from 'src/app/services/grades.service';
+import { TeamsService } from 'src/app/services/teams.service';
+import { forkJoin, map } from 'rxjs';
 
 @Component({
   selector: 'app-teams-page',
@@ -13,75 +16,54 @@ import { ActivitiesService } from 'src/app/services/activities.service';
 })
 export class TeamsPageComponent {
   public value:any;
-  selected = 'option2';
+  selected: any;
   selected2 = 'option1'
   
-  public activityLoaded: boolean = false
-  public activities: Activity[] = []
+  activityLoaded: boolean = false
+  activities: Activity[] = []
 
-
-  columns: string[] = ['Id', 'Name', 'Grade'];
+  teamLoaded: boolean = false
+  columns: string[] = ['id', 'name', 'grade'];
   teams: any[] = [];
   filteredTeams: any[] = [];
 
   @ViewChild(TableComponent, { static: true }) tableComponent!: TableComponent;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
-  constructor(private searchService: SearchService, private activityService: ActivitiesService) {}
+  constructor(private teamService: TeamsService, private searchService: SearchService, private activityService: ActivitiesService, private gradeService: GradesService, private changeDetectorRefs: ChangeDetectorRef) {}
 
-  // Simulate an API call or data fetch to get students data (replace this with your actual data retrieval method)
   async ngOnInit() {
 
     this.activityLoaded = false
     await this.initActivity();
-    console.log(this.activities);
-    // // Replace this with your actual data retrieval method, e.g., an API call, service, etc.
-    // // For now, we'll use a setTimeout to simulate a delay in data retrieval.   
-    // //setTimeout(() => {
-    //   // Sample data (replace this with your actual data)
-    //   this.teams = [
-    //     { Id: 1, Name: 'Team 1', Grade: '9' },
-    //     { Id: 2, Name: 'Team 2', Grade: '7' },
-    //     { Id: 3, Name: 'Team 3', Grade: '10' },
-    //     { Id: 4, Name: 'Team 4', Grade: '8' },
-    //     { Id: 5, Name: 'Team 5', Grade: '6' },
-    //     { Id: 6, Name: 'Team 6', Grade: '10' },
-    //     { Id: 7, Name: 'Team 7', Grade: '9' },
-    //     { Id: 8, Name: 'Team 8', Grade: '9' },
-    //     { Id: 9, Name: 'Team 9', Grade: '7' },
-    //     { Id: 10, Name: 'Team 10', Grade: '10' },
-    //     { Id: 11, Name: 'Team 11', Grade: '8' },
-    //     { Id: 12, Name: 'Team 12', Grade: '6' },
-    //     { Id: 13, Name: 'Team 13', Grade: '10' },
-    //     { Id: 14, Name: 'Team 14', Grade: '9' }
-    //     // Add more student objects as needed...
-    //   ];
+    if (this.activities.length > 0) {
+      this.selected = this.activities[0].id;
+  }
+  this.teamLoaded = false
+    await this.initTeams();
+    
+    this.filteredTeams = this.teams.slice();
 
-    //   this.filteredTeams = this.teams.slice();
+    const dataSource = new MatTableDataSource<any>(this.filteredTeams);
 
-    //   // Create a new MatTableDataSource instance with the students data
-    //   const dataSource = new MatTableDataSource<any>(this.filteredTeams);
-      
-    //   // Assign the MatTableDataSource instance to the TableComponent's dataSource property
-    //   this.tableComponent.dataSource = dataSource;
-    //   this.tableComponent.dataSource.paginator =  this.paginator;
-    // //}, 0); // Simulating a delay of 0 seconds for data retrieval
+    this.tableComponent.dataSource = dataSource;
+    this.tableComponent.dataSource.paginator = this.paginator;
 
-    // this.searchService.currentSearchInput$.subscribe((filterValue) => {
-    //   this.applyFilter(filterValue);
-    // });
+    this.searchService.currentSearchInput$.subscribe((filterValue) => {
+      this.applyFilter(filterValue);
+    });
+    
   }
   applyFilter(filterValue: string) {
     const lowerCaseFilter = filterValue.trim().toLowerCase();
 
     this.filteredTeams = this.teams.filter((dataItem: any) => {
       return (  
-      dataItem.Name.toLowerCase().includes(lowerCaseFilter) ||
-      dataItem.Grade.toString().includes(lowerCaseFilter)
+      dataItem.name.toLowerCase().includes(lowerCaseFilter) ||
+      dataItem.grade.toString().includes(lowerCaseFilter)
       );
     });
 
-    // Update the table with the filtered data
     this.tableComponent.dataSource.data = this.filteredTeams;
   }
 
@@ -92,6 +74,41 @@ export class TeamsPageComponent {
     } catch (error) {
         console.error(error);
     }
+}
+async initTeams() {
+  try {
+    const activityId = this.selected;
+    this.teams = await this.teamService.getByActivityId(activityId).toPromise() || [];
+
+    const teamObservables = this.teams
+      .filter(team => team.id !== undefined) 
+      .map(team => {
+        return this.teamService.getTeamById(team.id!).pipe(
+          map(team2 => {
+            team.name = team2.name;
+            return team;
+          })
+        )
+      });
+    this.teams = await forkJoin(teamObservables).toPromise() || [];
+
+    const gradeObservables = this.teams
+        .filter(team => team.id !== undefined) 
+        .map(team => {
+          return this.teamService.getAverage(team.id!, activityId).pipe(
+            map(grade => {
+              team.grade = grade;
+              return team;
+            })
+          )
+        });
+      this.teams = await forkJoin(gradeObservables).toPromise() || [];
+  
+    this.teamLoaded = true;
+    this.changeDetectorRefs.detectChanges();
+  } catch (error) {
+    console.error(error);
+  }
 }
 
 }  

@@ -13,6 +13,7 @@ import { ChangeDetectorRef } from '@angular/core';
 export class MyTeamComponent {
   public value: any;
 
+  public teamId: number = 1
   public studentLoaded: boolean = false
   public students: User[] = []
 
@@ -25,20 +26,23 @@ export class MyTeamComponent {
   async ngOnInit() {
     this.studentLoaded = false
     await this.initStudents();
-    console.log(this.students)
-
-    const dataSource = new MatTableDataSource<any>(this.students);
-    this.tableComponent.dataSource = dataSource;
   }
 
   async initStudents() {
     try {
-      this.students = await this.userService.getAllUsers().toPromise() || [];
+      let allUsers = await this.userService.getAllUsers().toPromise() || [];
+      //this.students = allUsers.filter(user => user.teamId === 1);
+  this.students = allUsers;
+      // Initialize the dataSource after the data has loaded
+      const dataSource = new MatTableDataSource<any>(this.students);
+      this.tableComponent.dataSource = dataSource;
+  
       this.studentLoaded = true;
       this.changeDetectorRefs.detectChanges();
     } catch (error) {
       console.error(error);
     }
   }
+  
 
 }
